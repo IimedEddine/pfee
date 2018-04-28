@@ -26,17 +26,12 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private Label label;
-    
-    
-    
    
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
         System.exit(0);
     }
-        @FXML
-    private Button button;
         
     @FXML 
     private AnchorPane rootpane;
@@ -64,14 +59,15 @@ public class FXMLDocumentController implements Initializable {
     }
     
     
-    @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
     
     }    
       @FXML 
-     void min(ActionEvent event){
-    
-    
+     private void min(ActionEvent event){
+    	  Stage stage = (Stage) rootpane.getScene().getWindow();
+    	 // Stage myStage = (Stage) rootpane.getScene().getWindow();
+    	  stage.setIconified(true);
+    System.out.println("Click");
     
     
     }
