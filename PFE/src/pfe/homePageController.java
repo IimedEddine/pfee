@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.scene.control.Button;
 /**
  *
@@ -49,6 +50,7 @@ public class homePageController implements Initializable {
        Parent root1 = (Parent) fxmlLoader.load();
        Stage stage = new Stage();
        stage.setScene(new Scene(root1));  
+       stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
 
     
