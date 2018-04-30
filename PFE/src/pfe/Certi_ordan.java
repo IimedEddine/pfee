@@ -10,11 +10,13 @@ package pfe;
  * @author ZaCCC
  */
 public class Certi_ordan {
+	
     int num;
     String date; 
     String nomMedecin;
     String nomPatient;
     String formeMedicament;
+    
     public void Etablir(){
         
     }

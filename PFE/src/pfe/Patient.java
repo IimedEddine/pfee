@@ -17,8 +17,10 @@ public class Patient {
      String adresse;
      String numeroDeTel;
      String iD;
+     
     public Patient(String pNom, String pPrénom, String pDateNais, String pSexe, String pAdresse, String pID ){
-        nom= pNom;
+       
+    	nom= pNom;
         prénom= pPrénom;
         dateDeNaissance=pDateNais;
         sexe=pSexe;

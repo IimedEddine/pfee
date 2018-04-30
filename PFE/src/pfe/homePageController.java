@@ -44,6 +44,7 @@ public class homePageController implements Initializable {
     
     @FXML
     private void agenda(ActionEvent event) throws IOException{
+    	
      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Agenda.fxml"));
        Parent root1 = (Parent) fxmlLoader.load();
        Stage stage = new Stage();
@@ -92,7 +93,7 @@ public class homePageController implements Initializable {
     
     
     }
-    @Override
+    
     public void initialize(URL arg0, ResourceBundle arg1) {
     
      
