@@ -20,7 +20,10 @@ public class PFE extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
+<<<<<<< HEAD
     	
+=======
+>>>>>>> 7a78823ae67d78b9a8fbc5332d872c32c5a1263a
         Parent root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
         
         Scene scene = new Scene(root);
