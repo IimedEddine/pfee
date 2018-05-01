@@ -9,13 +9,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -28,26 +24,15 @@ public class agendaController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    @FXML 
-    AnchorPane rootpane;
-    
+    @FXML AnchorPane rootpane;
+     
     @FXML
     private void exitButton(ActionEvent event) {
-    	Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+       Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
         stage.close();
         
-    }
-    
-   public void start(Stage stage) throws Exception {
-    	
-        Parent root = FXMLLoader.load(getClass().getResource("Agenda.fxml"));
         
-        Scene scene = new Scene(root);
-       
-        
-        stage.setScene(scene);
     }
-    
      @FXML
     void minimize(ActionEvent event){
     
@@ -55,8 +40,10 @@ public class agendaController implements Initializable {
     stage=(Stage)((Button)event.getSource()).getScene().getWindow();
     stage.setIconified(true);
     
+    
+    
     }
-     
+    @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    

@@ -17,8 +17,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.scene.control.Button;
+import javafx.stage.StageStyle;
 /**
  *
  * @author imad_
@@ -33,8 +33,13 @@ public class homePageController implements Initializable {
    
     
     @FXML
-    private void exitButton(ActionEvent event) {
-        System.exit(0);
+    private void exitButton(ActionEvent event) throws IOException {
+       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Quit.fxml"));
+       Parent root1 = (Parent) fxmlLoader.load();
+       Stage stage = new Stage();
+       stage.setScene(new Scene(root1)); 
+       stage.initStyle(StageStyle.UNDECORATED);
+       stage.show();
     }
         @FXML
     private Button button;
@@ -45,23 +50,20 @@ public class homePageController implements Initializable {
     
     @FXML
     private void agenda(ActionEvent event) throws IOException{
-    	
      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Agenda.fxml"));
        Parent root1 = (Parent) fxmlLoader.load();
        Stage stage = new Stage();
-       stage.setScene(new Scene(root1));  
+       stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+        
 
     
     }
     @FXML 
      private void patient(ActionEvent event) throws IOException{
-     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Patient.fxml"));
-       Parent root1 = (Parent) fxmlLoader.load();
-       Stage stage = new Stage();
-       stage.setScene(new Scene(root1));  
-       stage.show();
+      AnchorPane pane= FXMLLoader.load(getClass().getResource("Patient.fxml"));
+    rootpane.getChildren().setAll(pane);
 
     
     }
@@ -70,7 +72,8 @@ public class homePageController implements Initializable {
      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("consultation.fxml"));
        Parent root1 = (Parent) fxmlLoader.load();
        Stage stage = new Stage();
-       stage.setScene(new Scene(root1));  
+       stage.setScene(new Scene(root1)); 
+       stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
 
     
@@ -80,7 +83,8 @@ public class homePageController implements Initializable {
      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cerOrd.fxml"));
        Parent root1 = (Parent) fxmlLoader.load();
        Stage stage = new Stage();
-       stage.setScene(new Scene(root1));  
+       stage.setScene(new Scene(root1)); 
+       stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
 
     
@@ -95,7 +99,7 @@ public class homePageController implements Initializable {
     
     
     }
-    
+    @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
     
      

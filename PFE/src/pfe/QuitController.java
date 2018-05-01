@@ -13,34 +13,26 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
  *
  * @author imad_
  */
-public class CerOrdController implements Initializable {
-  @FXML AnchorPane rootpane;
+public class QuitController implements Initializable {
+@FXML AnchorPane rootpane;
      
     @FXML
-    private void exitButton(ActionEvent event) {
+    private void No(ActionEvent event) {
        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
         stage.close();
         
         
     }
-     @FXML
-    void minimize(ActionEvent event){
-    
-    Stage stage =(Stage)rootpane.getScene().getWindow();
-    stage=(Stage)((Button)event.getSource()).getScene().getWindow();
-    stage.setIconified(true);
-    
-    
-    
+    @FXML
+    private void Yes(ActionEvent event){
+    System.exit(0);
     }
-  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
