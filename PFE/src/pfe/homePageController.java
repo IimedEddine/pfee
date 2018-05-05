@@ -63,7 +63,7 @@ public class homePageController implements Initializable {
     @FXML 
      private void patient(ActionEvent event) throws IOException{
       AnchorPane pane= FXMLLoader.load(getClass().getResource("Patient.fxml"));
-    rootpane.getChildren().setAll(pane);
+      rootpane.getChildren().setAll(pane);
 
     
     }
@@ -99,7 +99,7 @@ public class homePageController implements Initializable {
     
     
     }
-    @Override
+   
     public void initialize(URL arg0, ResourceBundle arg1) {
     
      

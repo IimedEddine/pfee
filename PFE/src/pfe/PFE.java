@@ -20,6 +20,8 @@ public class PFE extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
+      
+
         Parent root = FXMLLoader.load(getClass().getResource("homePage.fxml"));
         
         Scene scene = new Scene(root);
