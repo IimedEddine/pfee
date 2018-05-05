@@ -18,7 +18,10 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
+import javafx.scene.control.TextArea;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 /**
  * FXML Controller class
  *
@@ -56,9 +59,44 @@ public class consultationController implements Initializable {
 
     
     }
+    @FXML
+    private TextArea Crondu;
+    @FXML
+     TextField ng;
+    @FXML
+    private Label nbrgr;
+    
+    @FXML private RadioButton femme;
+    @FXML 
+    void Show(ActionEvent event){
+    ng.setVisible(true);
+    nbrgr.setVisible(true);
+    }
+    @FXML
+     void hide(ActionEvent event){
+    ng.setVisible(false);
+    nbrgr.setVisible(false);
+    }
+    @FXML
+    private AnchorPane color;
+     
+     @FXML
+     void blue(ActionEvent event){
+     color.setStyle("-fx-background-color:blue;");
+     
+     }
+     
+     @FXML
+      Label G;
+     public void Gsurp(ActionEvent event){
+         
+        
+     
+     }
     
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        ng.setVisible(false);
+        nbrgr.setVisible(false);
     }    
     
 }
