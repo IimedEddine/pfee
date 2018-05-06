@@ -8,12 +8,12 @@
 
 <AnchorPane id="AnchorPane" prefHeight="185.0" prefWidth="464.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pfe.QuitController">
    <children>
-      <AnchorPane prefHeight="25.0" prefWidth="464.0" style="-fx-background-color: brown;">
+      <AnchorPane prefHeight="25.0" prefWidth="464.0" style="-fx-background-color: brown;" AnchorPane.bottomAnchor="149.0" AnchorPane.topAnchor="0.0">
          <children>
             <Button layoutX="440.0" layoutY="1.0" mnemonicParsing="false" onAction="#No" text="X" />
-            <Label layoutX="17.0" layoutY="3.0" prefHeight="17.0" prefWidth="33.0" text="Quit">
+            <Label layoutX="14.0" layoutY="6.0" prefHeight="21.0" prefWidth="101.0" text="Quitter" textFill="#f2f2f2">
                <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold Italic" size="16.0" />
                </font>
             </Label>
          </children>

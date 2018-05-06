@@ -12,7 +12,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -29,10 +32,13 @@ public class CerOrdController implements Initializable {
   @FXML AnchorPane rootpane;
      
     @FXML
-    private void exitButton(ActionEvent event) {
-       Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        stage.close();
-        
+    private void exitButton(ActionEvent event) throws IOException {
+       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Quit.fxml"));
+       Parent root1 = (Parent) fxmlLoader.load();
+       Stage stage = new Stage();
+       stage.setScene(new Scene(root1)); 
+       stage.initStyle(StageStyle.UNDECORATED);
+       stage.show();
         
     }
      @FXML
@@ -60,7 +66,13 @@ public class CerOrdController implements Initializable {
     AnchorPane pane= FXMLLoader.load(getClass().getResource("ordd.fxml"));
     blanc.getChildren().setAll(pane);
     }
-  
+   @FXML
+    void back(MouseEvent MOUSE_CLICKED) throws IOException{
+    
+    AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
+    rootpane.getChildren().setAll(pane);
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
      

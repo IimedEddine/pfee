@@ -27,8 +27,7 @@ import javafx.scene.input.DragEvent;
  */
 public class homePageController implements Initializable {
     
-    @FXML
-    private Label label;
+    
     
     
     
@@ -73,12 +72,8 @@ public class homePageController implements Initializable {
     }
     @FXML
     private void cerOrd(ActionEvent event) throws IOException{
-     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cerOrd.fxml"));
-       Parent root1 = (Parent) fxmlLoader.load();
-       Stage stage = new Stage();
-       stage.setScene(new Scene(root1)); 
-       stage.initStyle(StageStyle.UNDECORATED);
-       stage.show();
+     AnchorPane pane= FXMLLoader.load(getClass().getResource("cerOrd.fxml"));
+      rootpane.getChildren().setAll(pane);
 
     
     }

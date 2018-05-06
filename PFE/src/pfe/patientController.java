@@ -49,11 +49,7 @@ public class patientController implements Initializable {
     
     
     }
-    @FXML
-    void retour(ActionEvent event) throws IOException{
-     AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
-    rootpane.getChildren().setAll(pane);
-    }
+  
      @FXML
     private void consultation(ActionEvent event) throws IOException{
      AnchorPane pane= FXMLLoader.load(getClass().getResource("consultation.fxml"));

@@ -2,64 +2,66 @@
 
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pfe.CerOrdController">
+<AnchorPane id="AnchorPane" prefHeight="640.0" prefWidth="999.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pfe.CerOrdController">
    <children>
-      <AnchorPane prefHeight="36.0" prefWidth="609.0" style="-fx-background-color: brown;">
+      <AnchorPane prefHeight="44.0" prefWidth="999.0" style="-fx-background-color: brown;" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button layoutX="581.0" layoutY="2.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="25.0" prefWidth="25.0" text="X" />
-            <Button layoutX="556.0" layoutY="2.0" mnemonicParsing="false" onAction="#minimize" prefHeight="25.0" prefWidth="25.0" text="-" />
+            <Button layoutX="971.0" layoutY="4.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="25.0" prefWidth="25.0" text="X" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0" />
+            <Button layoutX="934.0" layoutY="4.0" mnemonicParsing="false" onAction="#minimize" prefHeight="25.0" prefWidth="25.0" text="-" AnchorPane.topAnchor="3.0" />
          </children>
       </AnchorPane>
-      <Button layoutX="219.0" layoutY="177.0" mnemonicParsing="false" onAction="#showOrd" text="Cert" />
-      <Button layoutX="333.0" layoutY="177.0" mnemonicParsing="false" text="Ord" />
-      <Label layoutX="159.0" layoutY="223.0" text="Certificat de :">
+      <Button layoutX="234.0" layoutY="299.0" mnemonicParsing="false" onAction="#showOrd" prefHeight="29.0" prefWidth="100.0" text="Cert" />
+      <Button layoutX="429.0" layoutY="299.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="Ord" />
+      <Label layoutX="188.0" layoutY="359.0" text="Certificat de :">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <TextField layoutX="325.0" layoutY="229.0" promptText="Par ex: grossesse" />
-      <TextArea layoutX="97.0" layoutY="267.0" prefHeight="119.0" prefWidth="452.0" />
-      <Label layoutX="35.0" layoutY="71.0" prefHeight="25.0" prefWidth="41.0" text="Dr:">
+      <TextField layoutX="354.0" layoutY="365.0" promptText="Par ex: grossesse" />
+      <TextArea layoutX="87.0" layoutY="433.0" prefHeight="119.0" prefWidth="817.0" />
+      <Label layoutX="35.0" layoutY="85.0" prefHeight="25.0" prefWidth="41.0" text="Dr:">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="35.0" layoutY="106.0" text="Code:">
+      <Label layoutX="34.0" layoutY="134.0" text="Code:">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="354.0" layoutY="48.0" text="Date:" AnchorPane.leftAnchor="354.0">
+      <Label layoutX="355.0" layoutY="59.0" text="Date:" AnchorPane.leftAnchor="355.0">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="385.0" layoutY="84.0" text="Nom:" AnchorPane.leftAnchor="354.0" AnchorPane.topAnchor="80.0">
+      <Label layoutX="354.0" layoutY="101.0" text="Nom:" AnchorPane.leftAnchor="354.0" AnchorPane.topAnchor="101.0">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="355.0" layoutY="113.0" prefHeight="25.0" prefWidth="75.0" text="Prénom:" AnchorPane.bottomAnchor="269.0" AnchorPane.leftAnchor="355.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="113.0">
+      <Label layoutX="342.0" layoutY="144.0" prefHeight="29.0" prefWidth="100.0" text="Prénom:" AnchorPane.bottomAnchor="467.0" AnchorPane.leftAnchor="342.0" AnchorPane.rightAnchor="557.0" AnchorPane.topAnchor="144.0">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="357.0" layoutY="138.0" text="Age:" AnchorPane.leftAnchor="357.0" AnchorPane.topAnchor="146.0">
+      <Label layoutX="357.0" layoutY="188.0" text="Age:" AnchorPane.leftAnchor="357.0" AnchorPane.topAnchor="188.0">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="97.0" layoutY="72.0" promptText="Nom,Prenom" />
-      <TextField layoutX="97.0" layoutY="106.0" promptText="par ex: 05/380" />
-      <TextField layoutX="441.0" layoutY="80.0" prefHeight="25.0" prefWidth="146.0" promptText="Nom" AnchorPane.leftAnchor="441.0" AnchorPane.topAnchor="80.0" />
-      <TextField layoutX="441.0" layoutY="106.0" prefHeight="25.0" prefWidth="146.0" promptText="Prenom" AnchorPane.topAnchor="113.0" />
-      <TextField layoutX="441.0" layoutY="146.0" prefHeight="25.0" prefWidth="49.0" promptText="Age" />
+      <TextField layoutX="97.0" layoutY="85.0" promptText="Nom,Prenom" />
+      <TextField layoutX="97.0" layoutY="134.0" promptText="par ex: 05/380" />
+      <TextField layoutX="441.0" layoutY="101.0" prefHeight="25.0" prefWidth="149.0" promptText="Nom" AnchorPane.leftAnchor="441.0" AnchorPane.rightAnchor="409.0" AnchorPane.topAnchor="101.0" />
+      <TextField layoutX="442.0" layoutY="146.0" prefHeight="25.0" prefWidth="149.0" promptText="Prenom" AnchorPane.rightAnchor="409.0" AnchorPane.topAnchor="146.0" />
+      <TextField layoutX="442.0" layoutY="188.0" prefHeight="25.0" prefWidth="49.0" promptText="Age" />
+      <DatePicker layoutX="441.0" layoutY="60.0" prefHeight="25.0" prefWidth="176.0" promptText="jj/mm/aaaa" AnchorPane.leftAnchor="441.0" AnchorPane.rightAnchor="382.0" />
    </children>
     <stylesheets>
   <URL value="@MyCss.css" />
