@@ -7,14 +7,12 @@
     <offline-allowed/>
   </information>
   <resources>
-    <jfx:javafx-runtime version="2.2+" href="http://javadl.sun.com/webapps/download/GetFile/javafx-latest/windows-i586/javafx2.jnlp"/>
-  </resources>
-  <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="PFE.jar" size="1272027" download="eager" />
+    <jar href="PFE.jar" size="1257391" download="eager" />
+    <jar href="lib\mysql-connector-java-8.0.11.jar" size="2036609" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="PFE" >
-    <param name="requiredFXVersion" value="2.2+"/>
+    <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
   <jfx:javafx-desc  width="800" height="600" main-class="pfe.PFE"  name="PFE" />
   <update check="always"/>
