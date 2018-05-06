@@ -15,8 +15,11 @@
    <children>
       <AnchorPane prefHeight="44.0" prefWidth="999.0" style="-fx-background-color: brown;" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button layoutX="971.0" layoutY="4.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="25.0" prefWidth="25.0" text="X" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0" />
-            <Button layoutX="934.0" layoutY="4.0" mnemonicParsing="false" onAction="#minimize" prefHeight="25.0" prefWidth="25.0" text="-" AnchorPane.topAnchor="3.0" />
+            <Button layoutX="971.0" layoutY="4.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="25.0" prefWidth="25.0" text="X" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button layoutX="934.0" layoutY="4.0" mnemonicParsing="false" onAction="#minimize" prefHeight="25.0" prefWidth="25.0" text="-" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="3.0" />
             <Label layoutX="386.0" layoutY="7.0" prefHeight="31.0" prefWidth="265.0" text="Certificat/Ordonnance " textFill="#f8f8f8" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="386.0" AnchorPane.rightAnchor="348.0" AnchorPane.topAnchor="7.0">
                <font>
                   <Font name="System Bold Italic" size="21.0" />

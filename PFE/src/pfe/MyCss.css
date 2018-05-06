@@ -43,15 +43,8 @@ height               : 5px   ; /* Not working */
 
 
 }
-.glyph-icon{
-    
-    -fx-fill: transparent;
-    
-}
-.button:hover.glyph-icon{
-    -fx-fill: white;
-    
-}
+
+
 
 .button:pressed{
      -fx-font-veight: bold;
@@ -78,4 +71,14 @@ height               : 5px   ; /* Not working */
     
     
 }
-
+.menu-item{
+    
+    -fx-font-veight: bold;
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    
+    -fx-background-radius: 22;
+    -fx-border-width: 1.5;
+    
+    
+}

@@ -31,7 +31,7 @@
                 <MenuItem mnemonicParsing="false" onAction="#jaune" text="jaune" />
               </items>
             </MenuButton>
-            <Label layoutX="457.0" layoutY="11.0" text="Page d'Accueil" textFill="#f2f2f2">
+            <Label layoutX="427.0" layoutY="11.0" text="Page d'Accueil" textFill="#f2f2f2" AnchorPane.leftAnchor="427.0" AnchorPane.rightAnchor="427.0">
                <font>
                   <Font name="System Bold Italic" size="21.0" />
                </font>

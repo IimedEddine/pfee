@@ -6,19 +6,26 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="640.0" prefWidth="999.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pfe.CerOrdController">
+<AnchorPane id="AnchorPane" fx:id="rootpane" onMouseClicked="#back" prefHeight="640.0" prefWidth="999.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pfe.CerOrdController">
    <children>
       <AnchorPane prefHeight="44.0" prefWidth="999.0" style="-fx-background-color: brown;" AnchorPane.rightAnchor="0.0">
          <children>
             <Button layoutX="971.0" layoutY="4.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="25.0" prefWidth="25.0" text="X" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0" />
             <Button layoutX="934.0" layoutY="4.0" mnemonicParsing="false" onAction="#minimize" prefHeight="25.0" prefWidth="25.0" text="-" AnchorPane.topAnchor="3.0" />
+            <Label layoutX="386.0" layoutY="7.0" prefHeight="31.0" prefWidth="265.0" text="Certificat/Ordonnance " textFill="#f8f8f8" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="386.0" AnchorPane.rightAnchor="348.0" AnchorPane.topAnchor="7.0">
+               <font>
+                  <Font name="System Bold Italic" size="21.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <Button layoutX="234.0" layoutY="299.0" mnemonicParsing="false" onAction="#showOrd" prefHeight="29.0" prefWidth="100.0" text="Cert" />
-      <Button layoutX="429.0" layoutY="299.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="Ord" />
+      <Button layoutX="620.0" layoutY="299.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="100.0" text="Ord" />
       <Label layoutX="188.0" layoutY="359.0" text="Certificat de :">
          <font>
             <Font size="25.0" />
@@ -26,42 +33,47 @@
       </Label>
       <TextField layoutX="354.0" layoutY="365.0" promptText="Par ex: grossesse" />
       <TextArea layoutX="87.0" layoutY="433.0" prefHeight="119.0" prefWidth="817.0" />
-      <Label layoutX="35.0" layoutY="85.0" prefHeight="25.0" prefWidth="41.0" text="Dr:">
+      <Label layoutX="150.0" layoutY="99.0" prefHeight="25.0" prefWidth="41.0" text="Dr:">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="34.0" layoutY="134.0" text="Code:">
+      <Label layoutX="149.0" layoutY="148.0" text="Code:">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="355.0" layoutY="59.0" text="Date:" AnchorPane.leftAnchor="355.0">
+      <Label layoutX="573.0" layoutY="57.0" text="Date:" AnchorPane.leftAnchor="573.0">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="354.0" layoutY="101.0" text="Nom:" AnchorPane.leftAnchor="354.0" AnchorPane.topAnchor="101.0">
+      <Label layoutX="572.0" layoutY="99.0" text="Nom:" AnchorPane.leftAnchor="572.0" AnchorPane.topAnchor="99.0">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="342.0" layoutY="144.0" prefHeight="29.0" prefWidth="100.0" text="Prénom:" AnchorPane.bottomAnchor="467.0" AnchorPane.leftAnchor="342.0" AnchorPane.rightAnchor="557.0" AnchorPane.topAnchor="144.0">
+      <Label layoutX="560.0" layoutY="142.0" prefHeight="29.0" prefWidth="100.0" text="Prénom:" AnchorPane.bottomAnchor="469.0" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="339.0" AnchorPane.topAnchor="142.0">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="357.0" layoutY="188.0" text="Age:" AnchorPane.leftAnchor="357.0" AnchorPane.topAnchor="188.0">
+      <Label layoutX="575.0" layoutY="186.0" text="Age:" AnchorPane.leftAnchor="575.0" AnchorPane.topAnchor="186.0">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="97.0" layoutY="85.0" promptText="Nom,Prenom" />
-      <TextField layoutX="97.0" layoutY="134.0" promptText="par ex: 05/380" />
-      <TextField layoutX="441.0" layoutY="101.0" prefHeight="25.0" prefWidth="149.0" promptText="Nom" AnchorPane.leftAnchor="441.0" AnchorPane.rightAnchor="409.0" AnchorPane.topAnchor="101.0" />
-      <TextField layoutX="442.0" layoutY="146.0" prefHeight="25.0" prefWidth="149.0" promptText="Prenom" AnchorPane.rightAnchor="409.0" AnchorPane.topAnchor="146.0" />
-      <TextField layoutX="442.0" layoutY="188.0" prefHeight="25.0" prefWidth="49.0" promptText="Age" />
-      <DatePicker layoutX="441.0" layoutY="60.0" prefHeight="25.0" prefWidth="176.0" promptText="jj/mm/aaaa" AnchorPane.leftAnchor="441.0" AnchorPane.rightAnchor="382.0" />
+      <TextField layoutX="212.0" layoutY="99.0" promptText="Nom,Prenom" />
+      <TextField layoutX="212.0" layoutY="148.0" promptText="par ex: 05/380" />
+      <TextField layoutX="659.0" layoutY="99.0" prefHeight="25.0" prefWidth="149.0" promptText="Nom" AnchorPane.leftAnchor="659.0" AnchorPane.rightAnchor="191.0" AnchorPane.topAnchor="99.0" />
+      <TextField layoutX="659.0" layoutY="144.0" prefHeight="25.0" prefWidth="149.0" promptText="Prenom" AnchorPane.rightAnchor="191.0" AnchorPane.topAnchor="144.0" />
+      <TextField layoutX="660.0" layoutY="186.0" prefHeight="25.0" prefWidth="49.0" promptText="Age" />
+      <DatePicker layoutX="659.0" layoutY="58.0" prefHeight="25.0" prefWidth="176.0" promptText="jj/mm/aaaa" AnchorPane.leftAnchor="659.0" AnchorPane.rightAnchor="164.0" />
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="41.0" layoutY="62.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/previous-512.png" />
+         </image>
+      </ImageView>
    </children>
     <stylesheets>
   <URL value="@MyCss.css" />
