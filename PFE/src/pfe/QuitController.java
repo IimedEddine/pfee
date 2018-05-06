@@ -33,7 +33,7 @@ public class QuitController implements Initializable {
     private void Yes(ActionEvent event){
     System.exit(0);
     }
-    @Override
+   
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    

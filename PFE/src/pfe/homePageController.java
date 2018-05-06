@@ -19,6 +19,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.stage.StageStyle;
+import javafx.scene.input.DragEvent;
 /**
  *
  * @author imad_
@@ -69,13 +70,8 @@ public class homePageController implements Initializable {
     }
      @FXML
     private void consultation(ActionEvent event) throws IOException{
-     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("consultation.fxml"));
-       Parent root1 = (Parent) fxmlLoader.load();
-       Stage stage = new Stage();
-       stage.setScene(new Scene(root1)); 
-       stage.initStyle(StageStyle.UNDECORATED);
-       stage.show();
-
+     AnchorPane pane= FXMLLoader.load(getClass().getResource("consultation.fxml"));
+      rootpane.getChildren().setAll(pane);
     
     }
     @FXML
@@ -127,8 +123,9 @@ public class homePageController implements Initializable {
      color.setStyle("-fx-background-color:#ef5777;");
     }
    
+   
     public void initialize(URL arg0, ResourceBundle arg1) {
     
-     
+ 
 }
 }

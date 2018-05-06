@@ -56,13 +56,8 @@ public class patientController implements Initializable {
     }
      @FXML
     private void consultation(ActionEvent event) throws IOException{
-     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("consultation.fxml"));
-       Parent root1 = (Parent) fxmlLoader.load();
-       Stage stage = new Stage();
-       stage.setScene(new Scene(root1)); 
-       stage.initStyle(StageStyle.UNDECORATED);
-       stage.show();
-
+     AnchorPane pane= FXMLLoader.load(getClass().getResource("consultation.fxml"));
+      rootpane.getChildren().setAll(pane);
     
     }
     @FXML
@@ -71,7 +66,7 @@ public class patientController implements Initializable {
     AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
     rootpane.getChildren().setAll(pane);
     }
-    @Override
+    
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    

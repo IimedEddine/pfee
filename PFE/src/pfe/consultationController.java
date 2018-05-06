@@ -25,6 +25,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.MenuButton;
+import javafx.scene.input.MouseEvent;
 /**MenuButton
  * FXML Controller class
  *
@@ -70,14 +71,27 @@ public class consultationController implements Initializable {
     private Label nbrgr;
     
     @FXML private RadioButton femme;
+    String name="Celibataire";
+    String namea="Selectionnez";
     @FXML 
     void Show(ActionEvent event){
-    ng.setVisible(true);
+        if(name.equals(select.getText())||namea.equals(select.getText()) ){
+   ng.setVisible(false);
+    nbrgr.setVisible(false);
+    G.setVisible(false);
+       gp.setVisible(false);
+      slash.setVisible(false);
+      p.setVisible(false);
+        }else{
+        
+        
+        ng.setVisible(true);
     nbrgr.setVisible(true);
     G.setVisible(true);
        gp.setVisible(true);
       slash.setVisible(true);
-      p.setVisible(true);
+      p.setVisible(true);        
+        }
     }
     @FXML
      void hide(ActionEvent event){
@@ -118,6 +132,16 @@ public class consultationController implements Initializable {
     o.setVisible(true);
     non.setVisible(true);
             select.setText("Marié(e)");
+            
+            if(femme.isSelected()){
+            
+               ng.setVisible(true);
+    nbrgr.setVisible(true);
+    G.setVisible(true);
+       gp.setVisible(true);
+      slash.setVisible(true);
+      p.setVisible(true);  
+            }
     
     }
       @FXML
@@ -126,6 +150,16 @@ public class consultationController implements Initializable {
     o.setVisible(true);
     non.setVisible(true);
     select.setText("Divorcé(e)");
+    
+     if(femme.isSelected()){
+            
+               ng.setVisible(true);
+    nbrgr.setVisible(true);
+    G.setVisible(true);
+       gp.setVisible(true);
+      slash.setVisible(true);
+      p.setVisible(true);  
+            }
     }
     @FXML
     void hidEnf(ActionEvent event){
@@ -133,6 +167,16 @@ public class consultationController implements Initializable {
     o.setVisible(false);
     non.setVisible(false);
     select.setText("Celibataire");
+    
+    if(femme.isSelected()){
+            
+             ng.setVisible(false);
+    nbrgr.setVisible(false);
+    G.setVisible(false);
+       gp.setVisible(false);
+      slash.setVisible(false);
+      p.setVisible(false); 
+            }
     
     }
     @FXML
@@ -148,7 +192,19 @@ public class consultationController implements Initializable {
     void gP(KeyEvent key){
     G.setText(ng.getText());
     }
+    @FXML
+    void back(MouseEvent MOUSE_CLICKED) throws IOException{
     
+    AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
+    rootpane.getChildren().setAll(pane);
+    }
+    @FXML 
+    void patient(MouseEvent MOUSE_CLICKED) throws IOException{
+    AnchorPane pane= FXMLLoader.load(getClass().getResource("Patient.fxml"));
+    rootpane.getChildren().setAll(pane);
+    
+    
+    }
     
     public void initialize(URL url, ResourceBundle rb) {
         ng.setVisible(false);

@@ -8,6 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" fx:id="rootpane" prefHeight="640.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pfe.homePageController">
     <children>
@@ -19,8 +20,8 @@
       <AnchorPane fx:id="color" prefHeight="53.0" prefWidth="999.0" style="-fx-background-color: brown;">
          <children>
               <Button fx:id="button" layoutX="967.0" layoutY="1.0" onAction="#exitButton" prefHeight="25.0" prefWidth="25.0" text="X" />
-            <Button layoutX="942.0" layoutY="1.0" onAction="#minimize" prefHeight="25.0" prefWidth="25.0" text="-" />
-            <MenuButton layoutX="510.0" layoutY="1.0" mnemonicParsing="false" text="couleur" textFill="#8d5353">
+            <Button layoutX="935.0" layoutY="1.0" onAction="#minimize" prefHeight="25.0" prefWidth="25.0" text="-" />
+            <MenuButton layoutX="764.0" layoutY="1.0" mnemonicParsing="false" text="couleur" textFill="#8d5353">
               <items>
                   <MenuItem mnemonicParsing="false" onAction="#bleu" text="bleu" />
                   <MenuItem mnemonicParsing="false" onAction="#noir" text="noir" />
@@ -30,6 +31,11 @@
                 <MenuItem mnemonicParsing="false" onAction="#jaune" text="jaune" />
               </items>
             </MenuButton>
+            <Label layoutX="457.0" layoutY="11.0" text="Page d'Accueil" textFill="#f2f2f2">
+               <font>
+                  <Font name="System Bold Italic" size="21.0" />
+               </font>
+            </Label>
          </children>
          <stylesheets>
         <URL value="@MyCss.css" />
@@ -42,6 +48,11 @@
       <Button id="Patient" fx:id="Patient" layoutX="622.0" layoutY="268.0" onAction="#patient" prefHeight="80.0" prefWidth="214.0" text="Patient" />
       <Button layoutX="183.0" layoutY="424.0" mnemonicParsing="false" onAction="#consultation" prefHeight="80.0" prefWidth="214.0" text="Consultation" />
       <Button layoutX="622.0" layoutY="424.0" mnemonicParsing="false" onAction="#cerOrd" prefHeight="80.0" prefWidth="214.0" text="Certificat/Ordonnance" />
+      <Label layoutX="414.0" layoutY="73.0" prefHeight="56.0" prefWidth="214.0" text="Bienvenue" textFill="WHITE" AnchorPane.leftAnchor="414.0" AnchorPane.rightAnchor="371.0">
+         <font>
+            <Font name="System Bold" size="39.0" />
+         </font>
+      </Label>
    
 
     </children>
