@@ -15,42 +15,32 @@ import java.util.Date;
 public class connectToBD {
 
 
-        public static void main(String[] args) throws SQLException {
+        public static void main(String[] args) throws Exception {
 
-        Connection myConnection = null;
-        Statement myStatement = null;
-        ResultSet myResult = null;
+        Connection myConnection;
+        Statement myStatement;
+        
 
        
         try {
             // 1. Get a connection to database
-            myConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/CabinetDB?autoReconnect=true&useSSL=false","root", "zaki    usa");
+            myConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cabinetdb","root", "");
 
             // 2. Create a statement
             myStatement = myConnection.createStatement();
 
             // 3. Execute SQL query
-            myResult = myStatement.executeQuery("");
+            ResultSet myResult = myStatement.executeQuery("Select * From Agenda");
 
             // 4. Process the result set
             while (myResult.next()) {
-                System.out.println(myResult.getString("") + ", " + myResult.getString(""));
+                System.out.println(myResult.getString("jour"));
             }
 
-        } catch (SQLException exc) {
-        } finally {
-            if (myResult != null) {
-                myResult.close();
-            }
-
-            if (myStatement != null) {
-                myStatement.close();
-            }
-
-            if (myConnection != null) {
-                myConnection.close();
-            }
-        }
+        } catch (Exception exc) {
+        	
+        	System.out.println(exc.getMessage());
+        } 
     }   
 
 }
