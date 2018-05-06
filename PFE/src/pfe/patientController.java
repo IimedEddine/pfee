@@ -66,7 +66,7 @@ public class patientController implements Initializable {
     AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
     rootpane.getChildren().setAll(pane);
     }
-    
+   
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    

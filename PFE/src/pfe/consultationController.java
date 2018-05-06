@@ -36,10 +36,13 @@ public class consultationController implements Initializable {
       @FXML AnchorPane rootpane;
      
     @FXML
-    private void exitButton(ActionEvent event) {
-       Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
-        stage.close();
-        
+    private void exitButton(ActionEvent event) throws IOException {
+       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Quit.fxml"));
+       Parent root1 = (Parent) fxmlLoader.load();
+       Stage stage = new Stage();
+       stage.setScene(new Scene(root1)); 
+       stage.initStyle(StageStyle.UNDECORATED);
+       stage.show();
         
     }
      @FXML

@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.stage.StageStyle;
 import javafx.scene.input.DragEvent;
+
 /**
  *
  * @author imad_
@@ -51,12 +52,8 @@ public class homePageController implements Initializable {
     
     @FXML
     private void agenda(ActionEvent event) throws IOException{
-     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Agenda.fxml"));
-       Parent root1 = (Parent) fxmlLoader.load();
-       Stage stage = new Stage();
-       stage.setScene(new Scene(root1)); 
-       stage.initStyle(StageStyle.UNDECORATED);
-       stage.show();
+     AnchorPane pane= FXMLLoader.load(getClass().getResource("Agenda.fxml"));
+      rootpane.getChildren().setAll(pane);
         
 
     
