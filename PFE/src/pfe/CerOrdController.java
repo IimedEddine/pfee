@@ -5,15 +5,20 @@
  */
 package pfe;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
+
+
 
 /**
  * FXML Controller class
@@ -40,10 +45,25 @@ public class CerOrdController implements Initializable {
     
     
     }
+   
+    
+    
+    @FXML
+    private AnchorPane ordd;
+    
+    @FXML
+    private AnchorPane blanc;
+    
+    @FXML
+    void showOrd(ActionEvent event) throws IOException{
+    
+    AnchorPane pane= FXMLLoader.load(getClass().getResource("ordd.fxml"));
+    blanc.getChildren().setAll(pane);
+    }
   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+     
     }    
     
 }

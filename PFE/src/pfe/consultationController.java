@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.scene.input.KeyEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,7 +23,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
-/**
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.MenuButton;
+/**MenuButton
  * FXML Controller class
  *
  * @author imad_
@@ -71,11 +74,19 @@ public class consultationController implements Initializable {
     void Show(ActionEvent event){
     ng.setVisible(true);
     nbrgr.setVisible(true);
+    G.setVisible(true);
+       gp.setVisible(true);
+      slash.setVisible(true);
+      p.setVisible(true);
     }
     @FXML
      void hide(ActionEvent event){
     ng.setVisible(false);
     nbrgr.setVisible(false);
+    G.setVisible(false);
+       gp.setVisible(false);
+      slash.setVisible(false);
+      p.setVisible(false);
     }
     @FXML
     private AnchorPane color;
@@ -88,15 +99,67 @@ public class consultationController implements Initializable {
      
      @FXML
       Label G;
-     public void Gsurp(ActionEvent event){
-         
-        
-     
-     }
+    @FXML 
+    Label slash;
+    @FXML
+    Label gp;
+    @FXML
+    TextField p;
+    @FXML
+    Label enfant;
+    @FXML
+    RadioButton o;
+    @FXML
+    RadioButton non;
+    
+    @FXML
+    void showEnfmar(ActionEvent event){
+    enfant.setVisible(true);
+    o.setVisible(true);
+    non.setVisible(true);
+            select.setText("Marié(e)");
+    
+    }
+      @FXML
+    void showEnfdiv(ActionEvent event){
+    enfant.setVisible(true);
+    o.setVisible(true);
+    non.setVisible(true);
+    select.setText("Divorcé(e)");
+    }
+    @FXML
+    void hidEnf(ActionEvent event){
+    enfant.setVisible(false);
+    o.setVisible(false);
+    non.setVisible(false);
+    select.setText("Celibataire");
+    
+    }
+    @FXML
+    MenuButton select;
+    @FXML 
+    MenuItem celib;
+    @FXML
+    MenuItem div;
+    @FXML
+    MenuItem mar;
+    
+    @FXML
+    void gP(KeyEvent key){
+    G.setText(ng.getText());
+    }
+    
     
     public void initialize(URL url, ResourceBundle rb) {
         ng.setVisible(false);
         nbrgr.setVisible(false);
+       G.setVisible(false);
+       gp.setVisible(false);
+      slash.setVisible(false);
+      p.setVisible(false);
+       enfant.setVisible(false);
+    o.setVisible(false);
+    non.setVisible(false);
     }    
     
 }

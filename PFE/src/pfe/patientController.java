@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -63,6 +64,12 @@ public class patientController implements Initializable {
        stage.show();
 
     
+    }
+    @FXML
+    void back(MouseEvent MOUSE_CLICKED) throws IOException{
+    
+    AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
+    rootpane.getChildren().setAll(pane);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

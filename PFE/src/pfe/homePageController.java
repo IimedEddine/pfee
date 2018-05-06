@@ -99,6 +99,33 @@ public class homePageController implements Initializable {
     
     
     }
+     @FXML
+    AnchorPane color;
+    
+    @FXML
+    void bleu(ActionEvent event){
+    color.setStyle("-fx-background-color:#4b7bec;");
+    }
+      @FXML
+    void noir(ActionEvent event){
+    color.setStyle("-fx-background-color:#2d3436;");
+    }
+      @FXML
+    void vert(ActionEvent event){
+    color.setStyle("-fx-background-color:#218c74;");
+    }
+      @FXML
+    void jaune(ActionEvent event){
+     color.setStyle("-fx-background-color:#fbc531;");
+    }
+      @FXML
+    void violet(ActionEvent event){
+     color.setStyle("-fx-background-color:#82589F;");
+    }
+      @FXML
+    void rose(ActionEvent event){
+     color.setStyle("-fx-background-color:#ef5777;");
+    }
    
     public void initialize(URL arg0, ResourceBundle arg1) {
     

@@ -46,7 +46,7 @@
       <Button layoutX="495.0" layoutY="526.0" mnemonicParsing="false" onAction="#blue" prefHeight="25.0" prefWidth="68.0" text="Quit" />
       <Label layoutX="343.0" layoutY="125.0" text="NUM DE TELEPHONE :" />
       <Label fx:id="nbrgr" layoutX="237.0" layoutY="198.0" prefHeight="17.0" prefWidth="137.0" text="NOMRE DE GROSSESSE :" />
-      <TextField fx:id="ng" layoutX="371.0" layoutY="194.0" onKeyPressed="#Gsurp" promptText="Nombre de grossesse..." />
+      <TextField fx:id="ng" layoutX="371.0" layoutY="194.0" onKeyReleased="#gP" promptText="Nombre de grossesse..." />
       <Label layoutX="237.0" layoutY="56.0" prefHeight="27.0" prefWidth="229.0" text="Informations personnelles:" AnchorPane.leftAnchor="237.0" AnchorPane.rightAnchor="237.0">
          <font>
             <Font name="System Bold" size="18.0" />
@@ -54,28 +54,28 @@
       </Label>
       <Label layoutX="180.0" layoutY="133.0" text="Taille:" />
       <Label layoutX="402.0" layoutY="163.0" text="Situation famillialle:" />
-      <MenuButton layoutX="510.0" layoutY="160.0" mnemonicParsing="false" text="Selectionnez">
+      <MenuButton fx:id="select" layoutX="510.0" layoutY="160.0" mnemonicParsing="false" text="Selectionnez">
         <items>
-          <MenuItem mnemonicParsing="false" text="Celibataire" />
-          <MenuItem mnemonicParsing="false" text="Marié(e)" />
-            <MenuItem mnemonicParsing="false" text="Divorcé(e)" />
+          <MenuItem fx:id="celib" mnemonicParsing="false" onAction="#hidEnf" text="Celibataire" />
+          <MenuItem fx:id="mar" mnemonicParsing="false" onAction="#showEnfmar" text="Marié(e)" />
+            <MenuItem fx:id="div" mnemonicParsing="false" onAction="#showEnfdiv" text="Divorcé(e)" />
         </items>
       </MenuButton>
-      <RadioButton layoutX="179.0" layoutY="197.0" mnemonicParsing="false" text="Non">
+      <RadioButton fx:id="non" layoutX="179.0" layoutY="197.0" mnemonicParsing="false" text="Non">
          <toggleGroup>
             <ToggleGroup fx:id="enfants" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton layoutX="125.0" layoutY="197.0" mnemonicParsing="false" text="Oui" toggleGroup="$enfants" />
-      <Label layoutX="65.0" layoutY="197.0" text="Enfants:" />
-      <Label layoutX="529.0" layoutY="194.0" text="G/P:">
+      <RadioButton fx:id="o" layoutX="125.0" layoutY="197.0" mnemonicParsing="false" text="Oui" toggleGroup="$enfants" />
+      <Label fx:id="enfant" layoutX="65.0" layoutY="197.0" text="Enfants:" />
+      <Label fx:id="gp" layoutX="529.0" layoutY="194.0" text="G/P:">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField layoutX="605.0" layoutY="193.0" prefHeight="25.0" prefWidth="28.0" />
-      <Label fx:id="G" layoutX="566.0" layoutY="193.0" prefHeight="25.0" prefWidth="25.0" />
-      <Label layoutX="595.0" layoutY="198.0" prefHeight="17.0" prefWidth="10.0" text="/" />
+      <TextField fx:id="p" layoutX="611.0" layoutY="193.0" prefHeight="25.0" prefWidth="28.0" />
+      <Label fx:id="G" layoutX="566.0" layoutY="193.0" prefHeight="25.0" prefWidth="37.0" />
+      <Label fx:id="slash" layoutX="604.0" layoutY="198.0" prefHeight="17.0" prefWidth="10.0" text="/" />
       <Label layoutX="65.0" layoutY="230.0" text="Antecedants Familliaux:" />
       <TextArea layoutX="195.0" layoutY="230.0" prefHeight="63.0" prefWidth="460.0" />
       <ScrollBar layoutX="682.0" layoutY="43.0" orientation="VERTICAL" prefHeight="514.0" prefWidth="14.0" />

@@ -1,32 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import java.net.*?>
+
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pfe.CerOrdController">
    <children>
-      <AnchorPane prefHeight="48.0" prefWidth="607.0" style="-fx-background-color: brown;">
+      <AnchorPane prefHeight="36.0" prefWidth="609.0" style="-fx-background-color: brown;">
          <children>
             <Button layoutX="581.0" layoutY="2.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="25.0" prefWidth="25.0" text="X" />
             <Button layoutX="556.0" layoutY="2.0" mnemonicParsing="false" onAction="#minimize" prefHeight="25.0" prefWidth="25.0" text="-" />
          </children>
       </AnchorPane>
-      <TabPane layoutY="48.0" prefHeight="352.0" prefWidth="607.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Certificat">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </Tab>
-          <Tab text="Ordonnance ">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
+      <Button layoutX="219.0" layoutY="177.0" mnemonicParsing="false" onAction="#showOrd" text="Cert" />
+      <Button layoutX="333.0" layoutY="177.0" mnemonicParsing="false" text="Ord" />
+      <Label layoutX="159.0" layoutY="223.0" text="Certificat de :">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <TextField layoutX="325.0" layoutY="229.0" promptText="Par ex: grossesse" />
+      <TextArea layoutX="97.0" layoutY="267.0" prefHeight="119.0" prefWidth="452.0" />
+      <Label layoutX="35.0" layoutY="71.0" prefHeight="25.0" prefWidth="41.0" text="Dr:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="106.0" text="Code:">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="354.0" layoutY="48.0" text="Date:" AnchorPane.leftAnchor="354.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="385.0" layoutY="84.0" text="Nom:" AnchorPane.leftAnchor="354.0" AnchorPane.topAnchor="80.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="355.0" layoutY="113.0" prefHeight="25.0" prefWidth="75.0" text="Prénom:" AnchorPane.bottomAnchor="269.0" AnchorPane.leftAnchor="355.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="113.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="357.0" layoutY="138.0" text="Age:" AnchorPane.leftAnchor="357.0" AnchorPane.topAnchor="146.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField layoutX="97.0" layoutY="72.0" promptText="Nom,Prenom" />
+      <TextField layoutX="97.0" layoutY="106.0" promptText="par ex: 05/380" />
+      <TextField layoutX="441.0" layoutY="80.0" prefHeight="25.0" prefWidth="146.0" promptText="Nom" AnchorPane.leftAnchor="441.0" AnchorPane.topAnchor="80.0" />
+      <TextField layoutX="441.0" layoutY="106.0" prefHeight="25.0" prefWidth="146.0" promptText="Prenom" AnchorPane.topAnchor="113.0" />
+      <TextField layoutX="441.0" layoutY="146.0" prefHeight="25.0" prefWidth="49.0" promptText="Age" />
    </children>
     <stylesheets>
   <URL value="@MyCss.css" />
