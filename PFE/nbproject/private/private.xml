@@ -5,7 +5,9 @@
         <group>
             <file>file:/C:/Users/imad_/Documents/pfee/PFE/src/pfe/PFE.java</file>
             <file>file:/C:/Users/imad_/Documents/pfee/PFE/src/pfe/QuitController.java</file>
+            <file>file:/C:/Users/imad_/Documents/pfee/PFE/src/pfe/agendaController.java</file>
             <file>file:/C:/Users/imad_/Documents/pfee/PFE/src/pfe/consultationController.java</file>
+            <file>file:/C:/Users/imad_/Documents/pfee/PFE/src/pfe/connectToBD.java</file>
             <file>file:/C:/Users/imad_/Documents/pfee/PFE/src/pfe/homePageController.java</file>
         </group>
     </open-files>
