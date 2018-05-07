@@ -143,17 +143,12 @@
             <Image url="@image/previous-512.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="66.0" layoutY="47.0" onMouseClicked="#patient" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="560.0" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="893.0" AnchorPane.topAnchor="47.0">
-         <image>
-            <Image url="@image/patient-icon-0.png" />
-         </image>
-      </ImageView>
       <Label layoutX="779.0" layoutY="133.0" prefHeight="17.0" prefWidth="103.0" text="Statut Vaccinal:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Button layoutX="797.0" layoutY="596.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="70.0" text="Terminer" />
+      <Button fx:id="terminer" layoutX="797.0" layoutY="596.0" mnemonicParsing="false" onAction="#terminer" prefHeight="29.0" prefWidth="70.0" text="Terminer" />
    </children>
     <stylesheets>
   <URL value="@MyCss.css" />

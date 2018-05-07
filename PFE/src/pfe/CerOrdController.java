@@ -30,7 +30,8 @@ import javafx.stage.StageStyle;
  * @author imad_
  */
 public class CerOrdController implements Initializable {
-  @FXML AnchorPane rootpane;
+  @FXML 
+          private AnchorPane rootpane;
      
     @FXML
     private void exitButton(ActionEvent event) throws IOException {
@@ -60,8 +61,16 @@ public class CerOrdController implements Initializable {
     rootpane.getChildren().setAll(pane);
     }
     
+     @FXML 
+    void patient(MouseEvent MOUSE_CLICKED) throws IOException{
+    AnchorPane pane= FXMLLoader.load(getClass().getResource("Patient.fxml"));
+    rootpane.getChildren().setAll(pane);
     
-    @FXML private AnchorPane color;
+    
+    }
+    
+    @FXML 
+    private AnchorPane color;
     private double xOffset;
     private double yOffset;
     

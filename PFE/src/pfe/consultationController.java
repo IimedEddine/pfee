@@ -198,13 +198,14 @@ public class consultationController implements Initializable {
     AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
     rootpane.getChildren().setAll(pane);
     }
+   
     @FXML 
-    void patient(MouseEvent MOUSE_CLICKED) throws IOException{
-    AnchorPane pane= FXMLLoader.load(getClass().getResource("Patient.fxml"));
+    void terminer(ActionEvent event) throws IOException{
+    AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
     rootpane.getChildren().setAll(pane);
     
-    
     }
+    
     private double xOffset;
     private double yOffset;
     public void initialize(URL url, ResourceBundle rb) {
