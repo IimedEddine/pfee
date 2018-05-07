@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="185.0" prefWidth="464.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pfe.QuitController">
+<AnchorPane id="AnchorPane" fx:id="rootpane" prefHeight="185.0" prefWidth="464.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pfe.QuitController">
    <children>
       <AnchorPane prefHeight="25.0" prefWidth="464.0" style="-fx-background-color: brown;" AnchorPane.bottomAnchor="149.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button layoutX="440.0" layoutY="1.0" mnemonicParsing="false" onAction="#No" text="X">
+            <Button layoutX="440.0" layoutY="1.0" mnemonicParsing="false" onAction="#No" text="X" AnchorPane.rightAnchor="3.0">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>

@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -62,9 +63,29 @@ public class patientController implements Initializable {
     AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
     rootpane.getChildren().setAll(pane);
     }
+    @FXML 
+    private AnchorPane color;
+    
+   private double xOffset;
+   private double yOffset;
    
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        color.setOnMousePressed( e ->{
+     xOffset = PFE.getStageObj().getX() - e.getSceneX();
+     yOffset = PFE.getStageObj().getY() - e.getSceneY();
+      color.setCursor(Cursor.CLOSED_HAND);
+ 
+ });
+ color.setOnMouseDragged( e ->{
+ PFE.getStageObj().setX( e.getSceneX() + xOffset);
+ PFE.getStageObj().setY( e.getSceneY() + yOffset);
+ 
+ });
+ 
+ color.setOnMouseReleased( e ->{
+ 
+ color.setCursor(Cursor.DEFAULT);
+ });
     }    
     
 }

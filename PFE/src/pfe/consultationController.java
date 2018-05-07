@@ -13,6 +13,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -57,12 +58,8 @@ public class consultationController implements Initializable {
     }
     @FXML
     private void cerOrd(ActionEvent event) throws IOException{
-     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cerOrd.fxml"));
-       Parent root1 = (Parent) fxmlLoader.load();
-       Stage stage = new Stage();
-       stage.setScene(new Scene(root1)); 
-       stage.initStyle(StageStyle.UNDECORATED);
-       stage.show();
+     AnchorPane pane= FXMLLoader.load(getClass().getResource("cerOrd.fxml"));
+      rootpane.getChildren().setAll(pane);
 
     
     }
@@ -208,7 +205,8 @@ public class consultationController implements Initializable {
     
     
     }
-    
+    private double xOffset;
+    private double yOffset;
     public void initialize(URL url, ResourceBundle rb) {
         ng.setVisible(false);
         nbrgr.setVisible(false);
@@ -219,6 +217,24 @@ public class consultationController implements Initializable {
        enfant.setVisible(false);
     o.setVisible(false);
     non.setVisible(false);
+    
+    
+    color.setOnMousePressed( e ->{
+     xOffset = PFE.getStageObj().getX() - e.getSceneX();
+     yOffset = PFE.getStageObj().getY() - e.getSceneY();
+      color.setCursor(Cursor.CLOSED_HAND);
+ 
+ });
+ color.setOnMouseDragged( e ->{
+ PFE.getStageObj().setX( e.getSceneX() + xOffset);
+ PFE.getStageObj().setY( e.getSceneY() + yOffset);
+ 
+ });
+ 
+ color.setOnMouseReleased( e ->{
+ 
+ color.setCursor(Cursor.DEFAULT);
+ });
     }    
     
 }

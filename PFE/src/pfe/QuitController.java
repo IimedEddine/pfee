@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -33,9 +34,12 @@ public class QuitController implements Initializable {
     private void Yes(ActionEvent event){
     System.exit(0);
     }
-    @Override
+    
+    
+   
+    
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+      
     }    
     
 }

@@ -19,11 +19,11 @@
       </ImageView>
       <AnchorPane fx:id="color" prefHeight="53.0" prefWidth="999.0" style="-fx-background-color: brown;">
          <children>
-              <Button fx:id="button" layoutX="967.0" layoutY="1.0" onAction="#exitButton" prefHeight="25.0" prefWidth="25.0" text="X">
+              <Button fx:id="button" layoutX="967.0" layoutY="1.0" onAction="#exitButton" prefHeight="25.0" prefWidth="25.0" text="X" AnchorPane.rightAnchor="4.0">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <Button layoutX="935.0" layoutY="1.0" onAction="#minimize" prefHeight="25.0" prefWidth="25.0" text="-">
+            <Button layoutX="935.0" layoutY="1.0" onAction="#minimize" prefHeight="25.0" prefWidth="25.0" text="-" AnchorPane.rightAnchor="39.0">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>

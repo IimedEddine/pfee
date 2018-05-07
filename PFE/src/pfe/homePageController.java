@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -88,7 +89,7 @@ public class homePageController implements Initializable {
     
     }
      @FXML
-    AnchorPane color;
+    private AnchorPane color;
     
     @FXML
     void bleu(ActionEvent event){
@@ -114,10 +115,27 @@ public class homePageController implements Initializable {
     void rose(ActionEvent event){
      color.setStyle("-fx-background-color:#ef5777;");
     }
-   
+     private double xOffset;
+      private double yOffset;
    
     public void initialize(URL arg0, ResourceBundle arg1) {
     
+ color.setOnMousePressed( e ->{
+     xOffset = PFE.getStageObj().getX() - e.getSceneX();
+     yOffset = PFE.getStageObj().getY() - e.getSceneY();
+      color.setCursor(Cursor.CLOSED_HAND);
+ 
+ });
+ color.setOnMouseDragged( e ->{
+ PFE.getStageObj().setX( e.getSceneX() + xOffset);
+ PFE.getStageObj().setY( e.getSceneY() + yOffset);
+ 
+ });
+ 
+ color.setOnMouseReleased( e ->{
+ 
+ color.setCursor(Cursor.DEFAULT);
+ });
  
 }
 }

@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -51,21 +52,7 @@ public class CerOrdController implements Initializable {
     
     
     }
-   
-    
-    
-    @FXML
-    private AnchorPane ordd;
-    
-    @FXML
-    private AnchorPane blanc;
-    
-    @FXML
-    void showOrd(ActionEvent event) throws IOException{
-    
-    AnchorPane pane= FXMLLoader.load(getClass().getResource("ordd.fxml"));
-    blanc.getChildren().setAll(pane);
-    }
+  
    @FXML
     void back(MouseEvent MOUSE_CLICKED) throws IOException{
     
@@ -73,9 +60,28 @@ public class CerOrdController implements Initializable {
     rootpane.getChildren().setAll(pane);
     }
     
-    @Override
+    
+    @FXML private AnchorPane color;
+    private double xOffset;
+    private double yOffset;
+    
     public void initialize(URL url, ResourceBundle rb) {
-     
+     color.setOnMousePressed( e ->{
+     xOffset = PFE.getStageObj().getX() - e.getSceneX();
+     yOffset = PFE.getStageObj().getY() - e.getSceneY();
+      color.setCursor(Cursor.CLOSED_HAND);
+ 
+ });
+ color.setOnMouseDragged( e ->{
+ PFE.getStageObj().setX( e.getSceneX() + xOffset);
+ PFE.getStageObj().setY( e.getSceneY() + yOffset);
+ 
+ });
+ 
+ color.setOnMouseReleased( e ->{
+ 
+ color.setCursor(Cursor.DEFAULT);
+ });
     }    
     
 }

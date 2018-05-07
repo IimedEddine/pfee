@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
@@ -57,10 +58,26 @@ public class agendaController implements Initializable {
     rootpane.getChildren().setAll(pane);
     }
     
+    @FXML private AnchorPane color;
+    private double xOffset;
+    private double yOffset;
     
-    @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+color.setOnMousePressed( e ->{
+     xOffset = PFE.getStageObj().getX() - e.getSceneX();
+     yOffset = PFE.getStageObj().getY() - e.getSceneY();
+      color.setCursor(Cursor.CLOSED_HAND);
+ 
+ });
+ color.setOnMouseDragged( e ->{
+ PFE.getStageObj().setX( e.getSceneX() + xOffset);
+ PFE.getStageObj().setY( e.getSceneY() + yOffset);
+ 
+ });
+ 
+ color.setOnMouseReleased( e ->{
+ 
+ color.setCursor(Cursor.DEFAULT);
+ });    }    
     
 }
