@@ -5,6 +5,14 @@
  */
 package pfe;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Date;
+
 /**
  *
  * @author ZaCCC
@@ -12,19 +20,23 @@ package pfe;
 public class Patient {
     String nom;
     String prénom;
-    String dateDeNaissance;
+    
      String sexe;
-     String adresse;
-     String numeroDeTel;
-     String iD;
      
-    public Patient(String pNom, String pPrénom, String pDateNais, String pSexe, String pAdresse, String pID ){
+     String ville;
+     
+     int iD;
+     int age;
+     
+     
+     
+    public Patient(String pNom, String pPrénom, String pSexe, String pVille, int pID ){
        
     	nom= pNom;
         prénom= pPrénom;
-        dateDeNaissance=pDateNais;
+        
         sexe=pSexe;
-        adresse=pAdresse;
+        ville=pVille;
         iD=pID;
         
     }
@@ -37,5 +49,8 @@ public class Patient {
     public void Supprimer(){
 
 
+    }
+    public void Afficher(){
+        
     }
 }

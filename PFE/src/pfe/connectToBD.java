@@ -24,13 +24,15 @@ public class connectToBD {
        
         try {
             // 1. Get a connection to database
-            myConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cabinetdb","root", "");
+            myConnection = DriverManager.getConnection("jdbc:mysql://localhost:3306/cabinetdb","root", "yes");
+            System.out.println("connection succeful");
 
             // 2. Create a statement
             myStatement = myConnection.createStatement();
 
             // 3. Execute SQL query
-            ResultSet myResult = myStatement.executeQuery("Select * From Agenda");
+            String sql ="SELECT * FROM `agenda`";
+            ResultSet myResult = myStatement.executeQuery(sql);
 
             // 4. Process the result set
             while (myResult.next()) {

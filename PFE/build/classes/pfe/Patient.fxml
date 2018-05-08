@@ -17,7 +17,10 @@
    <children>
       <AnchorPane fx:id="color" prefHeight="41.0" prefWidth="999.0" style="-fx-background-color: brown;" AnchorPane.bottomAnchor="603.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button layoutX="966.0" layoutY="2.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="25.0" prefWidth="25.0" text="x" />
+            <Button layoutX="966.0" layoutY="2.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="25.0" prefWidth="25.0" text="X">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
             <Button layoutX="934.0" layoutY="2.0" mnemonicParsing="false" onAction="#minimize" prefHeight="25.0" prefWidth="25.0" text="-" />
             <Label layoutX="450.0" layoutY="5.0" prefHeight="31.0" prefWidth="99.0" text="Patients" textFill="WHITE" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="5.0">
                <font>
@@ -26,13 +29,14 @@
             </Label>
          </children>
       </AnchorPane>
-      <TableView layoutX="31.0" layoutY="187.0" prefHeight="419.0" prefWidth="937.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0">
+      <TableView fx:id="table" layoutX="31.0" layoutY="187.0" prefHeight="419.0" prefWidth="937.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0">
         <columns>
-          <TableColumn prefWidth="186.0" resizable="false" text="Nom" />
+          <TableColumn fx:id="name" prefWidth="186.0" resizable="false" text="Nom" />
           <TableColumn prefWidth="191.0" resizable="false" text="Prenom" />
-            <TableColumn prefWidth="53.0" resizable="false" text="Sexe" />
-            <TableColumn prefWidth="96.0" resizable="false" text="Ville" />
-            <TableColumn prefWidth="410.0" resizable="false" text="Situation" />
+            <TableColumn prefWidth="87.0" text="Age" />
+            <TableColumn prefWidth="79.0" resizable="false" text="Sexe" />
+            <TableColumn prefWidth="130.0" resizable="false" text="Ville" />
+            <TableColumn prefWidth="263.0" resizable="false" text="Situation" />
         </columns>
       </TableView>
       <Label layoutX="302.0" layoutY="128.0" prefHeight="17.0" prefWidth="40.0" text="SEXE :" AnchorPane.bottomAnchor="499.0" AnchorPane.leftAnchor="302.0" AnchorPane.rightAnchor="657.0" AnchorPane.topAnchor="128.0">
@@ -60,11 +64,12 @@
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font></Button>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="46.0" layoutY="59.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="545.0" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="913.0" AnchorPane.topAnchor="59.0">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="46.0" layoutY="59.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true" styleClass="button" AnchorPane.bottomAnchor="545.0" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="913.0" AnchorPane.topAnchor="59.0">
          <image>
             <Image url="@image/previous-512.png" />
          </image>
       </ImageView>
+      <Button layoutX="411.0" layoutY="79.0" mnemonicParsing="false" onAction="#test" prefHeight="29.0" prefWidth="116.0" text="test" />
    </children>
    <stylesheets>
   <URL value="@MyCss.css" />
