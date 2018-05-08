@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -28,10 +29,29 @@ public class ChangePatientController implements Initializable {
         
         
     }
+    @FXML 
+    private TextField nom;
     
+    @FXML 
+    void modifier(ActionEvent event){
+    
+   if(nom.isEditable()==false){
+   
+   nom.setEditable(true);
+   }
+    }
+    
+    @FXML 
+    void sauvgarder(ActionEvent event){
+    
+    if(nom.isEditable()==true){
+    nom.setEditable(false);
+    }
+    
+    }
     
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }    
     
 }
