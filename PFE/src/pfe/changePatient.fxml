@@ -108,10 +108,10 @@
       <TextField editable="false" layoutX="400.0" layoutY="128.0" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #f1f2f6;" AnchorPane.topAnchor="124.0" />
       <TextField editable="false" layoutX="693.0" layoutY="86.0" prefHeight="25.0" prefWidth="45.0" style="-fx-background-color: #f1f2f6;" AnchorPane.rightAnchor="40.0" />
       <TextField editable="false" layoutX="372.0" layoutY="162.0" style="-fx-background-color: #f1f2f6;" />
-      <TextArea layoutX="230.0" layoutY="316.0" prefHeight="63.0" prefWidth="508.0" AnchorPane.rightAnchor="40.0" />
-      <TextArea layoutX="230.0" layoutY="233.0" prefHeight="63.0" prefWidth="508.0" AnchorPane.rightAnchor="40.0" />
-      <TextArea layoutX="221.0" layoutY="493.0" prefHeight="99.0" prefWidth="508.0" AnchorPane.rightAnchor="40.0" />
-      <TextArea layoutX="229.0" layoutY="405.0" prefHeight="63.0" prefWidth="508.0" />
+      <TextArea editable="false" layoutX="230.0" layoutY="316.0" prefHeight="63.0" prefWidth="508.0" AnchorPane.rightAnchor="40.0" />
+      <TextArea editable="false" layoutX="230.0" layoutY="233.0" prefHeight="63.0" prefWidth="508.0" AnchorPane.rightAnchor="40.0" />
+      <TextArea editable="false" layoutX="221.0" layoutY="493.0" prefHeight="99.0" prefWidth="508.0" AnchorPane.rightAnchor="40.0" />
+      <TextArea editable="false" layoutX="229.0" layoutY="405.0" prefHeight="63.0" prefWidth="508.0" />
       <Button layoutX="666.0" layoutY="605.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Sauvgarder" AnchorPane.rightAnchor="40.0" />
       <Button layoutX="36.0" layoutY="605.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Modifier" AnchorPane.leftAnchor="31.0" />
       <Button layoutX="533.0" layoutY="605.0" mnemonicParsing="false" onAction="#annuler" prefWidth="94.0" text="Annuler" />
