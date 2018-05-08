@@ -63,6 +63,18 @@ public class patientController implements Initializable {
     AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
     rootpane.getChildren().setAll(pane);
     }
+    
+    @FXML 
+    void test(ActionEvent event) throws IOException{
+    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("changePatient.fxml"));
+       Parent root1 = (Parent) fxmlLoader.load();
+       Stage stage = new Stage();
+       stage.setScene(new Scene(root1)); 
+       stage.initStyle(StageStyle.UNDECORATED);
+       stage.show();
+    
+    }
+    
     @FXML 
     private AnchorPane color;
     

@@ -24,7 +24,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="49.0" layoutY="68.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="49.0" layoutY="68.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true" styleClass="button">
          <image>
             <Image url="@image/previous-512.png" />
          </image>

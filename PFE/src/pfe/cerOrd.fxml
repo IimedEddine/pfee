@@ -65,7 +65,7 @@
       <TextField layoutX="805.0" layoutY="144.0" prefHeight="25.0" prefWidth="176.0" promptText="Prenom" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="144.0" />
       <TextField layoutX="778.0" layoutY="186.0" prefHeight="25.0" prefWidth="49.0" promptText="Age" />
       <DatePicker layoutX="775.0" layoutY="59.0" prefHeight="25.0" prefWidth="176.0" promptText="jj/mm/aaaa" AnchorPane.leftAnchor="775.0" AnchorPane.rightAnchor="48.0" />
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="31.0" layoutY="71.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="31.0" layoutY="71.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true" styleClass="button">
          <image>
             <Image url="@image/previous-512.png" />
          </image>
@@ -108,7 +108,7 @@
         </tabs>
       </TabPane>
       <Button layoutX="863.0" layoutY="593.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="91.0" text="Imprimer" />
-      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="90.0" layoutY="71.0" onMouseClicked="#patient" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="90.0" layoutY="71.0" onMouseClicked="#patient" pickOnBounds="true" preserveRatio="true" styleClass="button">
          <image>
             <Image url="@image/patient-icon-0.png" />
          </image>
