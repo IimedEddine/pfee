@@ -7,6 +7,9 @@ package pfe;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -114,7 +117,11 @@ public class homePageController implements Initializable {
       @FXML
     void rose(ActionEvent event){
      color.setStyle("-fx-background-color:#ef5777;");
+     
     }
+    @FXML private Label horloge;
+  
+    
      private double xOffset;
       private double yOffset;
    
@@ -136,6 +143,9 @@ public class homePageController implements Initializable {
  
  color.setCursor(Cursor.DEFAULT);
  });
+ DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+ Date date = new Date();
+ horloge.setText(dateFormat.format(date));
  
 }
 }
