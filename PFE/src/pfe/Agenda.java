@@ -11,7 +11,7 @@ package pfe;
  */
 public class Agenda {
     String date;
-    String heure;
+    
     public void Ajouter(){
         
     }
