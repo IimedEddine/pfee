@@ -119,7 +119,7 @@ public class homePageController implements Initializable {
      color.setStyle("-fx-background-color:#ef5777;");
      
     }
-    @FXML private Label horloge;
+    
   
     
      private double xOffset;
@@ -143,9 +143,7 @@ public class homePageController implements Initializable {
  
  color.setCursor(Cursor.DEFAULT);
  });
- DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
- Date date = new Date();
- horloge.setText(dateFormat.format(date));
+
  
 }
 }
