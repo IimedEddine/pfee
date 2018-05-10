@@ -71,6 +71,11 @@
             <Font name="System Bold" size="39.0" />
          </font>
       </Label>
+      <Label fx:id="horloge" layoutX="92.0" layoutY="148.0" prefHeight="88.0" prefWidth="823.0" textFill="#e8e8e8">
+         <font>
+            <Font size="60.0" />
+         </font>
+      </Label>
    
 
     </children>

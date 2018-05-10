@@ -47,7 +47,7 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
-      <Label layoutX="63.0" layoutY="163.0" prefHeight="17.0" prefWidth="40.0" text="SEXE :" AnchorPane.bottomAnchor="467.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="899.0" AnchorPane.topAnchor="163.0">
+      <Label layoutX="59.0" layoutY="165.0" prefHeight="17.0" prefWidth="40.0" text="SEXE :" AnchorPane.bottomAnchor="465.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="900.0" AnchorPane.topAnchor="165.0">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
@@ -57,12 +57,12 @@
       <TextField layoutX="105.0" layoutY="129.0" prefHeight="25.0" prefWidth="62.0" promptText="Poids..." AnchorPane.bottomAnchor="493.0" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="832.0" AnchorPane.topAnchor="129.0" />
       <TextField layoutX="257.0" layoutY="129.0" prefHeight="25.0" prefWidth="62.0" promptText="Taille" AnchorPane.bottomAnchor="493.0" AnchorPane.leftAnchor="257.0" AnchorPane.rightAnchor="680.0" AnchorPane.topAnchor="129.0" />
       <TextField layoutX="593.0" layoutY="130.0" prefHeight="25.0" prefWidth="137.0" promptText="Numero De Telephone" AnchorPane.bottomAnchor="492.0" AnchorPane.leftAnchor="593.0" AnchorPane.rightAnchor="269.0" AnchorPane.topAnchor="130.0" />
-      <RadioButton layoutX="885.0" layoutY="124.0" mnemonicParsing="false" text="Non" AnchorPane.leftAnchor="885.0">
+      <RadioButton layoutX="872.0" layoutY="133.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="54.0" text="Non" AnchorPane.leftAnchor="872.0">
          <toggleGroup>
             <ToggleGroup fx:id="StatutVaccinal" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton layoutX="887.0" layoutY="145.0" mnemonicParsing="false" text="Oui" toggleGroup="$StatutVaccinal" AnchorPane.leftAnchor="885.0" />
+      <RadioButton layoutX="923.0" layoutY="134.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="54.0" text="Oui" toggleGroup="$StatutVaccinal" AnchorPane.leftAnchor="923.0" />
       <RadioButton fx:id="male" layoutX="129.0" layoutY="164.0" mnemonicParsing="false" onAction="#hide" text="MALE" AnchorPane.bottomAnchor="465.0" AnchorPane.leftAnchor="129.0" AnchorPane.rightAnchor="816.0" AnchorPane.topAnchor="164.0">
          <toggleGroup>
             <ToggleGroup fx:id="sexe" />
@@ -82,7 +82,7 @@
          </toggleGroup></RadioButton>
       <RadioButton fx:id="non" layoutX="190.0" layoutY="198.0" mnemonicParsing="false" text="Non" toggleGroup="$enfants" AnchorPane.topAnchor="198.0" />
       <TextField fx:id="ng" layoutX="593.0" layoutY="193.0" onKeyReleased="#gP" prefHeight="25.0" prefWidth="137.0" promptText="Nombre de grossesse..." />
-      <TextField fx:id="p" layoutX="894.0" layoutY="193.0" prefHeight="25.0" prefWidth="28.0" />
+      <TextField fx:id="p" layoutX="894.0" layoutY="193.0" prefHeight="25.0" prefWidth="28.0" promptText="p" />
       <TextArea layoutX="213.0" layoutY="230.0" prefHeight="63.0" prefWidth="726.0" AnchorPane.bottomAnchor="354.0" AnchorPane.leftAnchor="213.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="230.0" />
       <TextArea layoutX="213.0" layoutY="315.0" prefHeight="63.0" prefWidth="750.0" AnchorPane.bottomAnchor="269.0" AnchorPane.leftAnchor="213.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="315.0" />
       <TextArea layoutX="186.0" layoutY="403.0" prefHeight="63.0" prefWidth="750.0" AnchorPane.bottomAnchor="181.0" AnchorPane.leftAnchor="213.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="403.0" />
@@ -144,7 +144,7 @@
             <Image url="@image/previous-512.png" />
          </image>
       </ImageView>
-      <Label layoutX="779.0" layoutY="133.0" prefHeight="17.0" prefWidth="103.0" text="Statut Vaccinal:">
+      <Label layoutX="779.0" layoutY="133.0" prefHeight="17.0" prefWidth="103.0" text="Statut Vaccinal:" AnchorPane.leftAnchor="779.0">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -156,6 +156,12 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
+      <Label layoutX="779.0" layoutY="165.0" prefHeight="17.0" prefWidth="46.0" text="VILLE:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="825.0" layoutY="160.0" prefHeight="25.0" prefWidth="115.0" promptText="Ville" />
    </children>
     <stylesheets>
   <URL value="@MyCss.css" />

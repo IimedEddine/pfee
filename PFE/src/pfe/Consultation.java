@@ -83,7 +83,7 @@ public class Consultation {
   
     public void Ajouter(){
      
-        String sqlQuery = "INSERT INTO Patient (nomPatient, prenomPatient, agePatient, poidsPatient, taillePatient, numTelPatient, statutVaccinalPatient, sexePatient, situationFamillePatient, villePatient, enfantsPatient, nombreDeGrossesse, nombreEnfant, antcdsFPatient, antcdsPPatient, motifDeConsultation, compteRenduConsultation, dateConsultation  )" 
+        String sqlQuery = "INSERT INTO patient (nomPatient, prenomPatient, agePatient, poidsPatient, taillePatient, numTelPatient, statutVaccinalPatient, sexePatient, situationFamillePatient, villePatient, enfantsPatient, nombreDeGrossesse, nombreEnfant, antcdsFPatient, antcdsPPatient, motifDeConsultation, compteRenduConsultation, dateConsultation  )" 
                          +"VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
        	// this is the try statment 
    							
@@ -128,7 +128,7 @@ public class Consultation {
                  String  antcdsPPatient, String motifDeConsultation, String compteRenduConsultation, String dateConsultation  ){
       
       
-        	String sqlQuery = "UPDATE Patient SET `nomPatient` = ?, `prenomPatient` = ? , `agePatient` = ?, `poidsPatient` = ?" 
+        	String sqlQuery = "UPDATE patient SET `nomPatient` = ?, `prenomPatient` = ? , `agePatient` = ?, `poidsPatient` = ?" 
             		        + "`taillePatient` = ?, `numTelPatient` = ?, `statutVaccinalPatient` = ?, `sexePatient` = ?, `villePatient` = ?"
             		        + "`enfantsPatient` = ? `nombreDeGrossesse` = ?, `nombreEnfant`= ? , `antcdsFPatient`= ?, `antcdsPPatient`= ? "
                                 + "`motifDeConsultation`= ?, `compteRenduConsultation`=?, `dateConsultation`=?";
@@ -164,7 +164,7 @@ public class Consultation {
     }
   
   public void Supprimer(int ID){
-       String sqlQuery = "DELETE Patient WHERE id = ?";
+       String sqlQuery = "DELETE patient WHERE id = ?";
          
          try{
            PreparedStatement statement = myConn.prepareStatement(sqlQuery);
