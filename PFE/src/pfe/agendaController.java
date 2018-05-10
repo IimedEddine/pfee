@@ -21,6 +21,7 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.scene.control.Label;
 /**
  * FXML Controller class
  *
@@ -49,6 +50,19 @@ public class agendaController implements Initializable {
     Stage stage =(Stage)rootpane.getScene().getWindow();
     stage=(Stage)((Button)event.getSource()).getScene().getWindow();
     stage.setIconified(true);
+    }
+    @FXML 
+    Label label;
+    
+    @FXML 
+    void labelClick(MouseEvent MOUSE_CLICKED) throws IOException{
+         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AgendaTextArea.fxml"));
+       Parent root1 = (Parent) fxmlLoader.load();
+       Stage stage = new Stage();
+       stage.setScene(new Scene(root1)); 
+       stage.initStyle(StageStyle.UNDECORATED);
+       stage.show();
+    
     }
     
     @FXML
