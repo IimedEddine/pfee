@@ -39,7 +39,18 @@ import java.util.Date;
     public Certi_ordan (String cNomMedecin, String cCodeMedecin, String cdateCerti, String cnomPatient, String cprenomPatient, 
 		           int cagePatient, String ctypeDuContenu, String ctypeDeCertificat, String cContenu   ){
 													
-											    
+	  
+        
+          try {
+    
+        String url = "jdbc:sqlite:C:/sqlite/db/DBpfee.db"; // The Url of your database 'Strecture be like: xD' jbdc:sqlite: + the path of your db
+    
+       // Create the Connection ## Pass url (Path) as param
+         myConn = DriverManager.getConnection(url); 
+        }catch (SQLException e) {
+         System.out.println("Error : " + e.getMessage());
+        } 
+          
 	  this.nomMedecin=cNomMedecin;
 	  this.codeMedecin=cCodeMedecin;
           this.dateCerti= cdateCerti;
@@ -49,6 +60,9 @@ import java.util.Date;
 	  this.typeDuContenu=ctypeDuContenu;
 	  this.typeDeCertificat= ctypeDeCertificat;
 	  this.contenu=cContenu;
+          
+         
+        
 
     }												
 

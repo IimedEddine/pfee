@@ -17,7 +17,12 @@ import java.util.Date;
  *
  * @author ZaCCC
  */
+
+
 public class Consultation {
+     
+    
+    private Connection myConn;
    
   
     int idConsultation;
@@ -43,7 +48,7 @@ public class Consultation {
     
    
   
-    private Connection myConn;
+    
   
     
     public Consultation (String cNomPatient, String cPrenomPatient, int cAgePatient, int cPoidsPatient, int cTaillePatient, int cNumTelPatient,
@@ -69,10 +74,16 @@ public class Consultation {
         this.compteRenduConsultation=cCompteRenduConsultation; 
         this.dateConsultation=cDateConsultation; 
         
-      
-                
-                
-    }
+         try {
+    
+        String url = "jdbc:sqlite:C:/sqlite/db/DBpfee.db"; // The Url of your database 'Strecture be like: xD' jbdc:sqlite: + the path of your db
+    
+       // Create the Connection ## Pass url (Path) as param
+         myConn = DriverManager.getConnection(url); 
+        }catch (SQLException e) {
+         System.out.println("Error : " + e.getMessage());
+        }           
+   }
     
     
     		// I'm going to add the ADD method first then we go back to Constr
@@ -90,10 +101,7 @@ public class Consultation {
         // so this PreparedStatement class is going to hold our query and also help us to merge our attrs with our query
               		
           try {
-   							
-            		
-              
-     	      PreparedStatement statement = myConn.prepareStatement(sqlQuery);
+     	       PreparedStatement statement = myConn.prepareStatement(sqlQuery);
               
                statement.setString(1, this.nomPatient); // This inst is going to replace the first ? with the prenomPatient attr Right ?
   	       statement.setString(2, this.prenomPatient);
@@ -137,26 +145,26 @@ public class Consultation {
       		try {
             
             	PreparedStatement statement = myConn.prepareStatement(sqlQuery);
-               statement.setString(1, this.nomPatient); 
-  	       statement.setString(2, this.prenomPatient);
-               statement.setInt(3, this.agePatient);
-               statement.setInt(4, this.poidsPatient);	
-               statement.setInt(5, this.taillePatient)	;	
-               statement.setInt(6, this.numTelPatient);
-               statement.setString(7, this.statutVaccinalPatient);
-               statement.setInt(8, this.sexePatient);
-               statement.setString(9, this.villePatient);
-               statement.setString(10,this.enfantsPatient);
-               statement.setInt(11,this.nombreDeGrossesse);
-               statement.setInt(12,this.nombreEnfant);
-               statement.setString(13,this.antcdsFPatient);
-               statement.setString(14,this.antcdsPPatient);
-               statement.setString(15,this.motifDeConsultation);
-               statement.setString(16,this.compteRenduConsultation);
-               statement.setString(17,this.dateConsultation);
+                statement.setString(1, this.nomPatient); 
+  	        statement.setString(2, this.prenomPatient);
+                statement.setInt(3, this.agePatient);
+                statement.setInt(4, this.poidsPatient);	
+                statement.setInt(5, this.taillePatient)	;	
+                statement.setInt(6, this.numTelPatient);
+                statement.setString(7, this.statutVaccinalPatient);
+                statement.setInt(8, this.sexePatient);
+                statement.setString(9, this.villePatient);
+                statement.setString(10,this.enfantsPatient);
+                statement.setInt(11,this.nombreDeGrossesse);
+                statement.setInt(12,this.nombreEnfant);
+                statement.setString(13,this.antcdsFPatient);
+                statement.setString(14,this.antcdsPPatient);
+                statement.setString(15,this.motifDeConsultation);
+                statement.setString(16,this.compteRenduConsultation);
+                statement.setString(17,this.dateConsultation);
                
             
-               statement.executeUpdate();
+                statement.executeUpdate();
             
           }catch (SQLException e){
             System.out.println(e.getMessage());
