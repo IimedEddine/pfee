@@ -30,11 +30,12 @@ public class Patient {
 
     private Connection myConn;
 
-    public Patient(String pNom, String pPrenom, int pAge, String pSexe, String pVille, String pSituation ){
+    public Patient(String pNom, String pPrenom, int pAge, String pSexe, String pVille, String pSituation ) throws ClassNotFoundException{
         
          try {
     
-        String url = "jdbc:sqlite:C:/sqlite/db/DBpfee.db"; // The Url of your database 'Strecture be like: xD' jbdc:sqlite: + the path of your db
+        Class.forName("org.sqlite.JDBC");
+        String url = "jdbc:sqlite:C:\\Users\\info\\pfee\\PFE\\src\\pfe\\DBpfee.db"; // The Url of your database 'Strecture be like: xD' jbdc:sqlite: + the path of your db
     
        // Create the Connection ## Pass url (Path) as param
          myConn = DriverManager.getConnection(url); 
@@ -55,7 +56,7 @@ public class Patient {
     
     
     
-    public ArrayList<Patient> Afficher(){
+    public ArrayList<Patient> Afficher() throws ClassNotFoundException{
         
         ArrayList<Patient> list = new ArrayList<>();
 
@@ -86,7 +87,7 @@ public class Patient {
 
 
     
-    public ArrayList<Patient> Recherche(String word){
+    public ArrayList<Patient> Recherche(String word) throws ClassNotFoundException{
         ArrayList<Patient> list = new ArrayList<>();
         try {
         String sql = "SELECT (id_patient ,nomPatient, prenomPatient, agePatient, sexePatient, villePatient, antcdsPPatient) FROM patient WHERE nomPatient LIKE '" + word + "%' OR prenomPatient LIKE '" + word + "%'";

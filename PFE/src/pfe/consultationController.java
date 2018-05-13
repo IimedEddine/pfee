@@ -17,6 +17,7 @@ import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -64,16 +65,16 @@ public class consultationController implements Initializable {
     
     }
     @FXML
-    private TextArea Crondu;
+     TextArea Crondu;
     @FXML
      TextField ng;
     @FXML
-    private Label nbrgr;
+     Label nbrgr;
     
     @FXML private RadioButton femme;
     String name="Celibataire";
     String namea="Selectionnez";
-    @FXML 
+  /*  @FXML 
     void Show(ActionEvent event){
         if(name.equals(select.getText())||namea.equals(select.getText()) ){
    ng.setVisible(false);
@@ -92,8 +93,8 @@ public class consultationController implements Initializable {
       slash.setVisible(true);
       p.setVisible(true);        
         }
-    }
-    @FXML
+    }*/
+   /* @FXML
      void hide(ActionEvent event){
     ng.setVisible(false);
     nbrgr.setVisible(false);
@@ -101,7 +102,7 @@ public class consultationController implements Initializable {
        gp.setVisible(false);
       slash.setVisible(false);
       p.setVisible(false);
-    }
+    }*/
     @FXML
     private AnchorPane color;
      
@@ -198,13 +199,73 @@ public class consultationController implements Initializable {
     AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
     rootpane.getChildren().setAll(pane);
     }
-   
+   @FXML
+    TextField nomC;
+   @FXML
+    TextField prenomC;
+    @FXML
+    TextField ageC;
+    @FXML
+    TextField poidsC;
+    @FXML
+    TextField tailleC;
+            @FXML
+    TextField numDeTelC;
+            @FXML
+    RadioButton statutVaccinal0;
+            @FXML
+    RadioButton statutVaccinal1;
+                   @FXML
+    RadioButton male;
+            @FXML
+    TextField villeC;
+            @FXML
+    TextField nombreEnfants;
+            @FXML
+    TextArea antcdsF;
+            @FXML
+    TextArea antcdsP;
+            @FXML
+    TextArea motifDeConsutation;
+            
+    
+            @FXML
+    DatePicker dateC;
+           
     @FXML 
-    void terminer(ActionEvent event) throws IOException{
-    AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
+    void terminer(ActionEvent event) throws IOException, ClassNotFoundException{
+   
+    
+    String statutV1= null;
+    if (statutVaccinal1.isSelected()){
+        statutV1="Oui";
+    }else{
+        statutV1="Non";
+    }
+    
+     String sexe= null;
+    if (femme.isSelected()){
+        sexe="F";
+    }else{
+        sexe="M";
+    }
+    
+     String enfants= null;
+    if (o.isSelected()){
+        enfants="Oui";
+    }else{
+        enfants="Non";
+    }
+    
+    String dates= dateC.getValue().toString();
+    
+    
+   Consultation myPatient = new Consultation(nomC.getText(),prenomC.getText(),Integer.parseInt(ageC.getText()),Integer.parseInt(poidsC.getText()),Integer.parseInt(tailleC.getText()),Integer.parseInt(numDeTelC.getText()),statutV1,sexe,select.getText(),villeC.getText(),enfants,Integer.parseInt(ng.getText()),Integer.parseInt(nombreEnfants.getText()),antcdsF.getText(),antcdsP.getText(), motifDeConsutation.getText(),Crondu.getText(),dates);
+  
+    myPatient.Ajouter();
+    
+     AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
     rootpane.getChildren().setAll(pane);
-    
-    
     }
   
     
@@ -213,16 +274,16 @@ public class consultationController implements Initializable {
     private double xOffset;
     private double yOffset;
     public void initialize(URL url, ResourceBundle rb) {
-        ng.setVisible(false);
+     /*   ng.setVisible(false);
         nbrgr.setVisible(false);
        G.setVisible(false);
        gp.setVisible(false);
       slash.setVisible(false);
       p.setVisible(false);
-       enfant.setVisible(false);
+     enfant.setVisible(false);
     o.setVisible(false);
     non.setVisible(false);
-    
+    */
     
     color.setOnMousePressed( e ->{
      xOffset = PFE.getStageObj().getX() - e.getSceneX();

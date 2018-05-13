@@ -53,7 +53,7 @@ public class Consultation {
     
     public Consultation (String cNomPatient, String cPrenomPatient, int cAgePatient, int cPoidsPatient, int cTaillePatient, int cNumTelPatient,
                          String cStatutVaccinalPatient, String cSexePatient, String cSituationFamillePatient, String cVillePatient, String cEnfantsPatient, int cNombreDeGrossesse, 
-                        int cNombreEnfant, String cAntcdsFPatient, String cAntcdsPPatient, String cMotifDeConsultation, String cCompteRenduConsultation, String cDateConsultation){
+                        int cNombreEnfant, String cAntcdsFPatient, String cAntcdsPPatient, String cMotifDeConsultation, String cCompteRenduConsultation, String cDateConsultation) throws ClassNotFoundException{
        // est ce que nfwtou les ids wla lala ?????
       	this.nomPatient=cNomPatient;
         this.prenomPatient=cPrenomPatient;
@@ -75,9 +75,9 @@ public class Consultation {
         this.dateConsultation=cDateConsultation; 
         
          try {
-    
-        String url = "jdbc:sqlite:C:/sqlite/db/DBpfee.db"; // The Url of your database 'Strecture be like: xD' jbdc:sqlite: + the path of your db
-    
+         Class.forName("org.sqlite.JDBC");
+        String url = "jdbc:sqlite:C:\\Users\\info\\pfee\\PFE\\src\\pfe\\DBpfee.db"; // The Url of your database 'Strecture be like: xD' jbdc:sqlite: + the path of your db
+        
        // Create the Connection ## Pass url (Path) as param
          myConn = DriverManager.getConnection(url); 
         }catch (SQLException e) {
@@ -95,7 +95,11 @@ public class Consultation {
     public void Ajouter(){
      
         String sqlQuery = "INSERT INTO patient (nomPatient, prenomPatient, agePatient, poidsPatient, taillePatient, numTelPatient, statutVaccinalPatient, sexePatient, situationFamillePatient, villePatient, enfantsPatient, nombreDeGrossesse, nombreEnfant, antcdsFPatient, antcdsPPatient, motifDeConsultation, compteRenduConsultation, dateConsultation  )" 
-                         +"VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                         +"VALUES(?, ?, ?, ? , ?, ? , ?, ? , ?, ? , ?, ?, ?, ?, ?, ?, ?, ? )";
+                
+                
+                
+                
        	// this is the try statment 
    							
         // so this PreparedStatement class is going to hold our query and also help us to merge our attrs with our query
@@ -126,7 +130,7 @@ public class Consultation {
                
                statement.executeUpdate();
             	
-             }catch (SQLException e) {
+             }catch (Exception e) {
              System.out.println(e.getMessage()); // this msg is just for showing the error 
     
              } 
