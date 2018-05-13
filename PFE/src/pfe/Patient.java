@@ -51,28 +51,60 @@ public class Patient {
 
     }
 
-    public void Supprimer(int ID){
-       String sqlQuery = "DELETE Patient WHERE id = ?";
+   
+    
+    
+    
+    public ArrayList<Patient> Afficher(){
+        
+        ArrayList<Patient> list = new ArrayList<>();
 
         try{
-           PreparedStatement statement = myConn.prepareStatement(sqlQuery);
-           statement.setInt(1, ID);
-           statement.executeUpdate();
-        }catch (SQLException e){
-           System.out.println(e.getMessage());
+        
+        Statement myStatement = myConn.createStatement();
+        String sql = "SELECT (id_patient , nomPatient, prenomPatient, agePatient, sexePatient, villePatient, antcdsPPatient) FROM patient";
+        
+        ResultSet rs = myStatement.executeQuery(sql);
+        
+        while(rs.next()){
+            
+            list.add(new Patient(rs.getString("nomPatient"), rs.getString("prenomPatient"), rs.getInt("agePatient"),rs.getString("sexePatient"), rs.getString("villePatient"),rs.getString("antcdsPPatient")));
+            
         }
+             return list;
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+            
+        }
+            
+        
+        
     }
     
-    
-    public void Afficher(){
-      
-    }
-    
 
 
 
     
-    public void Recherche(){
+    public ArrayList<Patient> Recherche(String word){
+        ArrayList<Patient> list = new ArrayList<>();
+        try {
+        String sql = "SELECT (id_patient ,nomPatient, prenomPatient, agePatient, sexePatient, villePatient, antcdsPPatient) FROM patient WHERE nomPatient LIKE '" + word + "%' OR prenomPatient LIKE '" + word + "%'";
+        Statement myStatement = myConn.createStatement();
+        
+        ResultSet rs = myStatement.executeQuery(sql);
+        
+        while(rs.next()){
+            
+            list.add(new Patient(rs.getString("nomPatient"), rs.getString("prenomPatient"), rs.getInt("agePatient"),rs.getString("sexePatient"), rs.getString("villePatient"),rs.getString("antcdsPPatient")));
+            
+        }
+          return list;
+          
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
       
     }
 

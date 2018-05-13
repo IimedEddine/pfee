@@ -34,7 +34,7 @@ public class Consultation {
     int taillePatient;
     int numTelPatient;
     String statutVaccinalPatient;
-    char sexePatient;
+    String sexePatient;
     String situationFamillePatient;
     String villePatient; 
     String enfantsPatient; 
@@ -52,7 +52,7 @@ public class Consultation {
   
     
     public Consultation (String cNomPatient, String cPrenomPatient, int cAgePatient, int cPoidsPatient, int cTaillePatient, int cNumTelPatient,
-                         String cStatutVaccinalPatient, char cSexePatient, String cSituationFamillePatient, String cVillePatient, String cEnfantsPatient, int cNombreDeGrossesse, 
+                         String cStatutVaccinalPatient, String cSexePatient, String cSituationFamillePatient, String cVillePatient, String cEnfantsPatient, int cNombreDeGrossesse, 
                         int cNombreEnfant, String cAntcdsFPatient, String cAntcdsPPatient, String cMotifDeConsultation, String cCompteRenduConsultation, String cDateConsultation){
        // est ce que nfwtou les ids wla lala ?????
       	this.nomPatient=cNomPatient;
@@ -107,20 +107,23 @@ public class Consultation {
   	       statement.setString(2, this.prenomPatient);
                statement.setInt(3, this.agePatient);
                statement.setInt(4, this.poidsPatient);	
-               statement.setInt(5, this.taillePatient)	;	
+               statement.setInt(5, this.taillePatient);	
                statement.setInt(6, this.numTelPatient);
                statement.setString(7, this.statutVaccinalPatient);
-               statement.setInt(8, this.sexePatient);
+               statement.setString(8, this.sexePatient);
                statement.setString(9, this.villePatient);
                statement.setString(10,this.enfantsPatient);
-               statement.setInt(11,this.nombreDeGrossesse);
-               statement.setInt(12,this.nombreEnfant);
-               statement.setString(13,this.antcdsFPatient);
-               statement.setString(14,this.antcdsPPatient);
-               statement.setString(15,this.motifDeConsultation);
-               statement.setString(16,this.compteRenduConsultation);
-               statement.setString(17,this.dateConsultation);
-                 
+               statement.setString(11, this.situationFamillePatient);
+               statement.setInt(12,this.nombreDeGrossesse);
+               statement.setInt(13,this.nombreEnfant);
+               statement.setString(14,this.antcdsFPatient);
+               statement.setString(15,this.antcdsPPatient);
+               statement.setString(16,this.motifDeConsultation);
+               statement.setString(17,this.compteRenduConsultation);
+               statement.setString(18,this.dateConsultation);
+              
+               
+               
                statement.executeUpdate();
             	
              }catch (SQLException e) {
@@ -132,7 +135,7 @@ public class Consultation {
   
   
     public void Modifier(String nomPatient, String prenomPatient,int agePatient,int poidsPatient,int taillePatient,int numTelPatient, 
-                 String statutVaccinalPatient,char sexePatient, String villePatient, String enfantsPatient, int nombreDeGrossesse, int nombreEnfant, String antcdsFPatient, 
+                 String statutVaccinalPatient,String sexePatient, String villePatient, String enfantsPatient, int nombreDeGrossesse, int nombreEnfant, String antcdsFPatient, 
                  String  antcdsPPatient, String motifDeConsultation, String compteRenduConsultation, String dateConsultation  ){
       
       
@@ -152,16 +155,17 @@ public class Consultation {
                 statement.setInt(5, this.taillePatient)	;	
                 statement.setInt(6, this.numTelPatient);
                 statement.setString(7, this.statutVaccinalPatient);
-                statement.setInt(8, this.sexePatient);
+                statement.setString(8, this.sexePatient);
                 statement.setString(9, this.villePatient);
                 statement.setString(10,this.enfantsPatient);
-                statement.setInt(11,this.nombreDeGrossesse);
-                statement.setInt(12,this.nombreEnfant);
-                statement.setString(13,this.antcdsFPatient);
-                statement.setString(14,this.antcdsPPatient);
-                statement.setString(15,this.motifDeConsultation);
-                statement.setString(16,this.compteRenduConsultation);
-                statement.setString(17,this.dateConsultation);
+                statement.setString(11, this.situationFamillePatient);
+               statement.setInt(12,this.nombreDeGrossesse);
+               statement.setInt(13,this.nombreEnfant);
+               statement.setString(14,this.antcdsFPatient);
+               statement.setString(15,this.antcdsPPatient);
+               statement.setString(16,this.motifDeConsultation);
+               statement.setString(17,this.compteRenduConsultation);
+               statement.setString(18,this.dateConsultation);
                
             
                 statement.executeUpdate();
@@ -181,6 +185,6 @@ public class Consultation {
          }catch (SQLException e){
            System.out.println(e.getMessage());
          }
-           }
+   }
     
 }
