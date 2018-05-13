@@ -31,12 +31,13 @@
       </AnchorPane>
       <TableView fx:id="table" layoutX="31.0" layoutY="187.0" prefHeight="419.0" prefWidth="937.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0">
         <columns>
-          <TableColumn fx:id="name" prefWidth="186.0" resizable="false" text="Nom" />
-          <TableColumn prefWidth="191.0" resizable="false" text="Prenom" />
-            <TableColumn prefWidth="87.0" text="Age" />
+            <TableColumn prefWidth="68.0" text="ID" />
+          <TableColumn fx:id="name" prefWidth="205.0" resizable="false" text="Nom" />
+          <TableColumn prefWidth="176.0" resizable="false" text="Prenom" />
+            <TableColumn prefWidth="90.0" text="Age" />
             <TableColumn prefWidth="79.0" resizable="false" text="Sexe" />
             <TableColumn prefWidth="130.0" resizable="false" text="Ville" />
-            <TableColumn prefWidth="263.0" resizable="false" text="Situation" />
+            <TableColumn prefWidth="188.0" resizable="false" text="Situation" />
         </columns>
       </TableView>
       <Label layoutX="302.0" layoutY="128.0" prefHeight="17.0" prefWidth="40.0" text="SEXE :" AnchorPane.bottomAnchor="499.0" AnchorPane.leftAnchor="302.0" AnchorPane.rightAnchor="657.0" AnchorPane.topAnchor="128.0">
