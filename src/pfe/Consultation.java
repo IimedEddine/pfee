@@ -38,8 +38,8 @@ public class Consultation {
     String situationFamillePatient;
     String villePatient; 
     String enfantsPatient; 
-    String nombreDeGrossesse; 
-    String nombreEnfant;
+    int nombreDeGrossesse; 
+    int nombreEnfant;
     String antcdsFPatient;
     String antcdsPPatient;
     String motifDeConsultation;
@@ -52,8 +52,8 @@ public class Consultation {
   
     
     public Consultation (String cNomPatient, String cPrenomPatient, int cAgePatient, int cPoidsPatient, int cTaillePatient, int cNumTelPatient,
-                         String cStatutVaccinalPatient, String cSexePatient, String cSituationFamillePatient, String cVillePatient, String cEnfantsPatient, String cNombreDeGrossesse, 
-                        String cNombreEnfant, String cAntcdsFPatient, String cAntcdsPPatient, String cMotifDeConsultation, String cCompteRenduConsultation, String cDateConsultation) throws ClassNotFoundException{
+                         String cStatutVaccinalPatient, String cSexePatient, String cSituationFamillePatient, String cVillePatient, String cEnfantsPatient, int cNombreDeGrossesse, 
+                        int cNombreEnfant, String cAntcdsFPatient, String cAntcdsPPatient, String cMotifDeConsultation, String cCompteRenduConsultation, String cDateConsultation) throws ClassNotFoundException{
        // est ce que nfwtou les ids wla lala ?????
       	this.nomPatient=cNomPatient;
         this.prenomPatient=cPrenomPatient;
@@ -76,7 +76,7 @@ public class Consultation {
         
          try {
          Class.forName("org.sqlite.JDBC");
-         String url = "jdbc:sqlite:C:\\Users\\imad_\\Videos\\PFE\\src\\pfe\\DBpfee.db"; // The Url of your database 'Strecture be like: xD' jbdc:sqlite: + the path of your db
+        String url = "jdbc:sqlite:C:\\Users\\info\\pfee\\PFE\\src\\pfe\\DBpfee.db"; // The Url of your database 'Strecture be like: xD' jbdc:sqlite: + the path of your db
         
        // Create the Connection ## Pass url (Path) as param
          myConn = DriverManager.getConnection(url); 
@@ -88,7 +88,10 @@ public class Consultation {
     
     		// I'm going to add the ADD method first then we go back to Constr
     
-
+    
+ 
+  	
+  
     public void Ajouter(){
      
         String sqlQuery = "INSERT INTO patient (nomPatient, prenomPatient, agePatient, poidsPatient, taillePatient, numTelPatient, statutVaccinalPatient, sexePatient, situationFamillePatient, villePatient, enfantsPatient, nombreDeGrossesse, nombreEnfant, antcdsFPatient, antcdsPPatient, motifDeConsultation, compteRenduConsultation, dateConsultation  )" 
@@ -112,11 +115,11 @@ public class Consultation {
                statement.setInt(6, this.numTelPatient);
                statement.setString(7, this.statutVaccinalPatient);
                statement.setString(8, this.sexePatient);
-               statement.setString(9, this.situationFamillePatient);
-               statement.setString(10, this.villePatient);
-               statement.setString(11,this.enfantsPatient);
-               statement.setString(12,this.nombreDeGrossesse);
-               statement.setString(13,this.nombreEnfant);
+               statement.setString(9, this.villePatient);
+               statement.setString(10,this.enfantsPatient);
+               statement.setString(11, this.situationFamillePatient);
+               statement.setInt(12,this.nombreDeGrossesse);
+               statement.setInt(13,this.nombreEnfant);
                statement.setString(14,this.antcdsFPatient);
                statement.setString(15,this.antcdsPPatient);
                statement.setString(16,this.motifDeConsultation);
@@ -160,8 +163,8 @@ public class Consultation {
                 statement.setString(9, this.villePatient);
                 statement.setString(10,this.enfantsPatient);
                 statement.setString(11, this.situationFamillePatient);
-               statement.setString(12,this.nombreDeGrossesse);
-               statement.setString(13,this.nombreEnfant);
+               statement.setInt(12,this.nombreDeGrossesse);
+               statement.setInt(13,this.nombreEnfant);
                statement.setString(14,this.antcdsFPatient);
                statement.setString(15,this.antcdsPPatient);
                statement.setString(16,this.motifDeConsultation);

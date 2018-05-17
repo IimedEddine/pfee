@@ -20,7 +20,7 @@ import java.util.ArrayList;
  * @author ZaCCC
  */
 public class Patient {
-    int id;
+    int iD;
     String nom;
     String prenom;
     int age;
@@ -28,11 +28,11 @@ public class Patient {
     String ville;
     String situation;
 
-    //private Connection myConn;
+    private Connection myConn;
 
-    public Patient(int id,String pNom, String pPrenom, int pAge, String pSexe, String pVille, String pSituation ) throws ClassNotFoundException{
+    public Patient(String pNom, String pPrenom, int pAge, String pSexe, String pVille, String pSituation ) throws ClassNotFoundException{
         
-        /* try {
+         try {
     
         Class.forName("org.sqlite.JDBC");
         String url = "jdbc:sqlite:C:\\Users\\info\\pfee\\PFE\\src\\pfe\\DBpfee.db"; // The Url of your database 'Strecture be like: xD' jbdc:sqlite: + the path of your db
@@ -41,8 +41,8 @@ public class Patient {
          myConn = DriverManager.getConnection(url); 
         }catch (SQLException e) {
          System.out.println("Error : " + e.getMessage());
-        }*/
-        this.id=id;
+        }
+        
         this.nom=pNom;
         this.prenom= pPrenom;
         this.age=pAge;
@@ -52,73 +52,9 @@ public class Patient {
 
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setSexe(String sexe) {
-        this.sexe = sexe;
-    }
-
-    public void setVille(String ville) {
-        this.ville = ville;
-    }
-
-    public void setSituation(String situation) {
-        this.situation = situation;
-    }
-
-    public static void setMyConn(Connection myConn) {
-        Patient.myConn = myConn;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getSexe() {
-        return sexe;
-    }
-
-    public String getVille() {
-        return ville;
-    }
-
-    public String getSituation() {
-        return situation;
-    }
-
-    public static Connection getMyConn() {
-        return myConn;
-    }
-
    
     
-  /*  
+    
     
     public ArrayList<Patient> Afficher() throws ClassNotFoundException{
         
@@ -173,23 +109,8 @@ public class Patient {
       
     }
 
-*/
 
-      static Connection myConn=null;
- public static Connection Connection() throws ClassNotFoundException{
-  
-     try {
-        Class.forName("org.sqlite.JDBC");
-        String url = "jdbc:sqlite:C:\\Users\\imad_\\Videos\\PFE\\src\\pfe\\DBpfee.db"; // The Url of your database 'Strecture be like: xD' jbdc:sqlite: + the path of your db
-         myConn = DriverManager.getConnection(url); 
-         System.out.println("Connected");
-        }catch (SQLException e) {
-         System.out.println("Error : " + e.getMessage());
-        }
-     
-        return myConn;
-  }  
-    
+
 }
 
 

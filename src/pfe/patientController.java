@@ -7,15 +7,7 @@ package pfe;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,11 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -87,105 +75,29 @@ public class patientController implements Initializable {
     
     }
     
-   @FXML 
-   private AnchorPane color;
+    @FXML 
+    private AnchorPane color;
     
    private double xOffset;
    private double yOffset;
    
-   
-   @FXML
-    private TableView<Patient> myTable;
-   @FXML
-    private TableColumn<Patient,Integer> id;       
-    @FXML
-    private TableColumn<Patient,String> nom;           
-    @FXML
-    private TableColumn<Patient,String> prenom; 
-    @FXML
-    private TableColumn<Patient,Integer> age;
-    @FXML
-    private TableColumn<Patient,String> sexe;
-    @FXML
-    private TableColumn<Patient,String> ville;
-    @FXML
-    private TableColumn<Patient,String> situation;
-    Connection myConn=null;
-    public ObservableList<Patient>newData=FXCollections.observableArrayList();
-       
-       @FXML
-       void supprimer (ActionEvent event ){
-         try{    
-         myTable.setEditable(true);
-    int selectedIndex = myTable.getSelectionModel().getSelectedIndex();
-    Patient selectedItem = myTable.getSelectionModel().getSelectedItem();
-    if (selectedIndex >= 0) {
-       // if(selectedItem.getId()!=3){
-        myTable.getItems().remove(selectedIndex);
-        String sql = "DELETE FROM `patient` WHERE `id_patient` = "+selectedItem.getId()+"";
-        myConn=Patient.Connection();
-        Statement myStatement = myConn.createStatement();       
-        myStatement.executeUpdate(sql);
-            }else {
-        
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Pas De Selection");
-        alert.setHeaderText("Aucune Case sélectionnée");
-        alert.setContentText("veuillez sélectionner un employé dans la table.");
-        alert.showAndWait();
-    }
-
-             }catch (SQLException ex) {
-            Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
-       
-       
-       
-       
-       }
-   
     public void initialize(URL url, ResourceBundle rb) {
-     color.setOnMousePressed( e ->{
+        color.setOnMousePressed( e ->{
      xOffset = PFE.getStageObj().getX() - e.getSceneX();
      yOffset = PFE.getStageObj().getY() - e.getSceneY();
-     color.setCursor(Cursor.CLOSED_HAND);
+      color.setCursor(Cursor.CLOSED_HAND);
  
  });
-    color.setOnMouseDragged( e ->{
-    PFE.getStageObj().setX( e.getSceneX() + xOffset);
-    PFE.getStageObj().setY( e.getSceneY() + yOffset);
+ color.setOnMouseDragged( e ->{
+ PFE.getStageObj().setX( e.getSceneX() + xOffset);
+ PFE.getStageObj().setY( e.getSceneY() + yOffset);
  
-  });
- 
-    color.setOnMouseReleased( e ->{ 
-    color.setCursor(Cursor.DEFAULT);
  });
-
-      try {
-          myConn=Patient.Connection();
-          Statement myStatement = myConn.createStatement();
-          String sql = "SELECT * FROM `patient` WHERE 1";
-          ResultSet rs = myStatement.executeQuery(sql);
-
-             while (rs.next()) {  
-               newData.add(new Patient(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(9),rs.getString(11),rs.getString(16)));    
-         }
-           
-            id.setCellValueFactory(new PropertyValueFactory<Patient,Integer>("id"));
-            nom.setCellValueFactory(new PropertyValueFactory<Patient,String>("nom"));
-            prenom.setCellValueFactory(new PropertyValueFactory<Patient,String>("prenom"));
-            age.setCellValueFactory(new PropertyValueFactory<Patient,Integer>("age"));  
-            sexe.setCellValueFactory(new PropertyValueFactory<Patient,String>("sexe"));
-            ville.setCellValueFactory(new PropertyValueFactory<Patient,String>("ville"));
-            situation.setCellValueFactory(new PropertyValueFactory<Patient,String>("situation"));
-            myTable.setItems(newData);
-             
-      } catch (SQLException | ClassNotFoundException ex) {
-          Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
-      }
+ 
+ color.setOnMouseReleased( e ->{
+ 
+ color.setCursor(Cursor.DEFAULT);
+ });
     }    
     
 }
