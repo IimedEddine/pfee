@@ -33,6 +33,8 @@ public class agendaController implements Initializable {
      * Initializes the controller class.
      */
     @FXML AnchorPane rootpane;
+    
+  int labelId; 
      
     @FXML
     private void exitButton(ActionEvent event) throws IOException {
@@ -42,6 +44,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       
         
     }
      @FXML
@@ -53,8 +56,10 @@ public class agendaController implements Initializable {
     }
     @FXML 
     Label label;
-    
     @FXML 
+    
+    
+   
     void label1(MouseEvent MOUSE_CLICKED) throws IOException{
          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AgendaTextArea.fxml"));
        Parent root1 = (Parent) fxmlLoader.load();
@@ -62,7 +67,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
-    
+      
     }
     
     @FXML 
@@ -73,6 +78,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=2;
     
     }
     
@@ -84,6 +90,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=3;
     
     }
     
@@ -95,6 +102,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=4;
     
     }
     
@@ -106,6 +114,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=5;
     
     }
     
@@ -117,6 +126,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=6;
     
     }
     
@@ -128,6 +138,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=7;
     
     }
     
@@ -139,6 +150,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=8;
     
     }
     @FXML 
@@ -149,6 +161,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=9;
     
     }
     
@@ -160,6 +173,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=10;
     
     }
     
@@ -171,6 +185,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=11;
     
     }
     
@@ -182,6 +197,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=12;
     
     }
     
@@ -193,6 +209,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=13;
     
     }
     
@@ -204,6 +221,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=14;
     
     }
     
@@ -215,6 +233,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=15;
     
     }
     
@@ -226,6 +245,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=16;
     
     }
     
@@ -237,6 +257,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=17;
     
     }
     
@@ -248,6 +269,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=18;
     
     }
     
@@ -259,6 +281,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=19;
     
     }
     
@@ -270,6 +293,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=20; 
     
     }
     
@@ -281,6 +305,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=21;
     
     }
     
@@ -292,7 +317,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
-    
+       labelId=22;
     }
     
      @FXML 
@@ -303,6 +328,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=23;
     
     }
     
@@ -314,6 +340,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=24;
     
     }
     
@@ -325,6 +352,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=25;
     
     }
     
@@ -336,6 +364,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=26;
     
     }
     
@@ -347,6 +376,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=27;
     
     }
     
@@ -358,6 +388,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=28;
     
     }
     
@@ -369,6 +400,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=29;
     
     }
     
@@ -380,6 +412,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=30;
     
     }
     
@@ -391,6 +424,7 @@ public class agendaController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       labelId=31;
     
     }
             
@@ -408,6 +442,7 @@ public class agendaController implements Initializable {
     private double yOffset;
     
     public void initialize(URL url, ResourceBundle rb) {
+         
 color.setOnMousePressed( e ->{
      xOffset = PFE.getStageObj().getX() - e.getSceneX();
      yOffset = PFE.getStageObj().getY() - e.getSceneY();

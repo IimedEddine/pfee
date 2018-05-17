@@ -63,12 +63,12 @@
          </toggleGroup>
       </RadioButton>
       <RadioButton fx:id="statutVaccinal1" layoutX="923.0" layoutY="134.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="54.0" text="Oui" toggleGroup="$StatutVaccinal" AnchorPane.leftAnchor="923.0" />
-      <RadioButton fx:id="male" layoutX="129.0" layoutY="164.0" mnemonicParsing="false" text="MALE" AnchorPane.bottomAnchor="465.0" AnchorPane.leftAnchor="129.0" AnchorPane.rightAnchor="816.0" AnchorPane.topAnchor="164.0">
+      <RadioButton fx:id="male" layoutX="129.0" layoutY="164.0" mnemonicParsing="false" onAction="#hide" text="MALE" AnchorPane.bottomAnchor="465.0" AnchorPane.leftAnchor="129.0" AnchorPane.rightAnchor="816.0" AnchorPane.topAnchor="164.0">
          <toggleGroup>
             <ToggleGroup fx:id="sexe" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="femme" layoutX="190.0" layoutY="164.0" mnemonicParsing="false" text="FEMELLE" toggleGroup="$sexe" AnchorPane.bottomAnchor="465.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="739.0" AnchorPane.topAnchor="164.0" />
+      <RadioButton fx:id="femme" layoutX="190.0" layoutY="164.0" mnemonicParsing="false" onAction="#Show" text="FEMELLE" toggleGroup="$sexe" AnchorPane.bottomAnchor="465.0" AnchorPane.leftAnchor="190.0" AnchorPane.rightAnchor="739.0" AnchorPane.topAnchor="164.0" />
       <MenuButton fx:id="select" layoutX="593.0" layoutY="158.0" mnemonicParsing="false" text="Selectionnez" AnchorPane.bottomAnchor="460.0" AnchorPane.leftAnchor="593.0" AnchorPane.rightAnchor="303.0" AnchorPane.topAnchor="158.0">
         <items>
           <MenuItem fx:id="celib" mnemonicParsing="false" onAction="#hidEnf" text="Celibataire" />

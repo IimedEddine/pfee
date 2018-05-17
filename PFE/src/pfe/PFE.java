@@ -40,6 +40,7 @@ public class PFE extends Application {
   
     public static void main(String[] args) {
         launch(args);
+        int labelId; 
     }
 
     public static Stage getStageObj(){

@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 /**
@@ -19,10 +20,12 @@ import javafx.stage.Stage;
  * @author imad_
  */
 public class AgendaTextArea4Controller implements Initializable {
-
-  
    @FXML
-    private void ok(ActionEvent event) {
+   TextArea area4;
+   @FXML
+    private void ok(ActionEvent event) throws ClassNotFoundException {
+        Agenda myAgenda=new Agenda(4,area4.getText());
+        myAgenda.Ajouter(4);
        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
         stage.close();
         
