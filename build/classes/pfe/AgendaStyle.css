@@ -1,0 +1,24 @@
+
+
+.label{
+    
+    
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    
+    
+    
+}
+.label:hover{
+    
+    -fx-background-color: black;
+    -fx-text-fill: white;
+    
+     
+   
+       
+    
+    
+    
+    
+}
