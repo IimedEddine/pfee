@@ -135,31 +135,29 @@ public class Consultation {
     }
   
   
-    public void Modifier(String nomPatient, String prenomPatient,int agePatient,int poidsPatient,int taillePatient,int numTelPatient, 
-                 String statutVaccinalPatient,String sexePatient, String villePatient, String enfantsPatient, int nombreDeGrossesse, int nombreEnfant, String antcdsFPatient, 
-                 String  antcdsPPatient, String motifDeConsultation, String compteRenduConsultation, String dateConsultation  ){
+    public void Modifier(int id  ){
       
       
-        	String sqlQuery = "UPDATE patient SET `nomPatient` = ?, `prenomPatient` = ? , `agePatient` = ?, `poidsPatient` = ?" 
-            		        + "`taillePatient` = ?, `numTelPatient` = ?, `statutVaccinalPatient` = ?, `sexePatient` = ?, `villePatient` = ?"
-            		        + "`enfantsPatient` = ? `nombreDeGrossesse` = ?, `nombreEnfant`= ? , `antcdsFPatient`= ?, `antcdsPPatient`= ? "
-                                + "`motifDeConsultation`= ?, `compteRenduConsultation`=?, `dateConsultation`=?";
+        	String sqlQuery = "UPDATE patient SET `nomPatient` = ?, `prenomPatient` = ? , `agePatient` = ?, `poidsPatient` = ?,`taillePatient` = ?,`numTelPatient` = ?, `statutVaccinalPatient` = ?, `sexePatient` = ?,`situationFamillePatient`=?, `villePatient` = ?,`enfantsPatient` = ?, `nombreDeGrossesse` = ?, `nombreEnfant`= ? , `antcdsFPatient`= ?, `antcdsPPatient`= ?,`motifDeConsultation`= ?, `compteRenduConsultation`=?, `dateConsultation`=? "
+            		       
+                                
+                                + " WHERE `id_patient` = "+id;;
           
       
       		try {
             
             	PreparedStatement statement = myConn.prepareStatement(sqlQuery);
-                statement.setString(1, this.nomPatient); 
-  	        statement.setString(2, this.prenomPatient);
-                statement.setInt(3, this.agePatient);
-                statement.setInt(4, this.poidsPatient);	
-                statement.setInt(5, this.taillePatient)	;	
-                statement.setInt(6, this.numTelPatient);
-                statement.setString(7, this.statutVaccinalPatient);
-                statement.setString(8, this.sexePatient);
-                statement.setString(9, this.villePatient);
-                statement.setString(10,this.enfantsPatient);
-                statement.setString(11, this.situationFamillePatient);
+                statement.setString(1, this.nomPatient); // This inst is going to replace the first ? with the prenomPatient attr Right ?
+  	       statement.setString(2, this.prenomPatient);
+               statement.setInt(3, this.agePatient);
+               statement.setInt(4, this.poidsPatient);	
+               statement.setInt(5, this.taillePatient);	
+               statement.setInt(6, this.numTelPatient);
+               statement.setString(7, this.statutVaccinalPatient);
+               statement.setString(8, this.sexePatient);
+               statement.setString(9, this.situationFamillePatient);
+               statement.setString(10, this.villePatient);
+               statement.setString(11,this.enfantsPatient);
                statement.setString(12,this.nombreDeGrossesse);
                statement.setString(13,this.nombreEnfant);
                statement.setString(14,this.antcdsFPatient);

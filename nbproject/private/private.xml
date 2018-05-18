@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/pfe/Consultation.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>137</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/info/pfee/PFE/src/pfe/AgendaTextArea5Controller.java</file>
-            <file>file:/C:/Users/info/pfee/PFE/src/pfe/AgendaTextArea6Controller.java</file>
-            <file>file:/C:/Users/info/pfee/PFE/src/pfe/AgendaTextAreaController.java</file>
-            <file>file:/C:/Users/info/pfee/PFE/src/pfe/Consultation.java</file>
-            <file>file:/C:/Users/info/pfee/PFE/src/pfe/AgendaTextArea4Controller.java</file>
-            <file>file:/C:/Users/info/pfee/PFE/src/pfe/Agenda.java</file>
-            <file>file:/C:/Users/info/pfee/PFE/src/pfe/AgendaTextArea2Controller.java</file>
-            <file>file:/C:/Users/info/pfee/PFE/src/pfe/AgendaTextArea3Controller.java</file>
-            <file>file:/C:/Users/info/pfee/PFE/src/pfe/Patient.java</file>
+            <file>file:/C:/Users/imad_/Documents/pfee/src/pfe/consultationController.java</file>
+            <file>file:/C:/Users/imad_/Documents/pfee/src/pfe/Agenda.java</file>
+            <file>file:/C:/Users/imad_/Documents/pfee/src/pfe/AgendaTextArea19Controller.java</file>
+            <file>file:/C:/Users/imad_/Documents/pfee/src/pfe/ChangePatientController.java</file>
+            <file>file:/C:/Users/imad_/Documents/pfee/src/pfe/Consultation.java</file>
+            <file>file:/C:/Users/imad_/Documents/pfee/src/pfe/AgendaTextArea14Controller.java</file>
+            <file>file:/C:/Users/imad_/Documents/pfee/src/pfe/patientController.java</file>
+            <file>file:/C:/Users/imad_/Documents/pfee/src/pfe/AgendaTextArea4Controller.java</file>
+            <file>file:/C:/Users/imad_/Documents/pfee/src/pfe/Patient.java</file>
+            <file>file:/C:/Users/imad_/Documents/pfee/src/pfe/AgendaTextArea26Controller.java</file>
         </group>
     </open-files>
 </project-private>
