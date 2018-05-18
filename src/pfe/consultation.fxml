@@ -57,13 +57,13 @@
       <TextField fx:id="poidsC" layoutX="105.0" layoutY="129.0" prefHeight="25.0" prefWidth="62.0" promptText="Poids..." AnchorPane.bottomAnchor="493.0" AnchorPane.leftAnchor="105.0" AnchorPane.rightAnchor="832.0" AnchorPane.topAnchor="129.0" />
       <TextField fx:id="tailleC" layoutX="257.0" layoutY="129.0" prefHeight="25.0" prefWidth="62.0" promptText="Taille" AnchorPane.bottomAnchor="493.0" AnchorPane.leftAnchor="257.0" AnchorPane.rightAnchor="680.0" AnchorPane.topAnchor="129.0" />
       <TextField fx:id="numDeTelC" layoutX="593.0" layoutY="130.0" prefHeight="25.0" prefWidth="137.0" promptText="Numero De Telephone" AnchorPane.bottomAnchor="492.0" AnchorPane.leftAnchor="593.0" AnchorPane.rightAnchor="269.0" AnchorPane.topAnchor="130.0" />
-      <RadioButton fx:id="statutVaccinal0" layoutX="872.0" layoutY="133.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="54.0" text="Non" AnchorPane.leftAnchor="872.0">
+      <RadioButton fx:id="statutVaccinal0" layoutX="872.0" layoutY="133.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="54.0" selected="true" text="Non" AnchorPane.leftAnchor="872.0">
          <toggleGroup>
             <ToggleGroup fx:id="StatutVaccinal" />
          </toggleGroup>
       </RadioButton>
       <RadioButton fx:id="statutVaccinal1" layoutX="923.0" layoutY="134.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="54.0" text="Oui" toggleGroup="$StatutVaccinal" AnchorPane.leftAnchor="923.0" />
-      <RadioButton fx:id="male" layoutX="129.0" layoutY="164.0" mnemonicParsing="false" onAction="#hide" text="MALE" AnchorPane.bottomAnchor="465.0" AnchorPane.leftAnchor="129.0" AnchorPane.rightAnchor="816.0" AnchorPane.topAnchor="164.0">
+      <RadioButton fx:id="male" layoutX="129.0" layoutY="164.0" mnemonicParsing="false" onAction="#hide" selected="true" text="MALE" AnchorPane.bottomAnchor="465.0" AnchorPane.leftAnchor="129.0" AnchorPane.rightAnchor="816.0" AnchorPane.topAnchor="164.0">
          <toggleGroup>
             <ToggleGroup fx:id="sexe" />
          </toggleGroup>
@@ -80,9 +80,9 @@
          <toggleGroup>
             <ToggleGroup fx:id="enfants" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="non" layoutX="190.0" layoutY="198.0" mnemonicParsing="false" text="Non" toggleGroup="$enfants" AnchorPane.topAnchor="198.0" />
+      <RadioButton fx:id="non" layoutX="190.0" layoutY="198.0" mnemonicParsing="false" selected="true" text="Non" toggleGroup="$enfants" AnchorPane.topAnchor="198.0" />
       <TextField fx:id="ng" layoutX="593.0" layoutY="193.0" onKeyReleased="#gP" prefHeight="25.0" prefWidth="137.0" promptText="Nombre de grossesse..." />
-      <TextField fx:id="nombreEnfants" layoutX="894.0" layoutY="193.0" prefHeight="25.0" prefWidth="28.0" promptText="p" />
+      <TextField fx:id="nombreEnfants" layoutX="894.0" layoutY="193.0" prefHeight="25.0" prefWidth="28.0" promptText="nombreEnfants" />
       <TextArea fx:id="antcdsF" layoutX="213.0" layoutY="230.0" prefHeight="63.0" prefWidth="726.0" AnchorPane.bottomAnchor="354.0" AnchorPane.leftAnchor="213.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="230.0" />
       <TextArea fx:id="antcdsP" layoutX="213.0" layoutY="315.0" prefHeight="63.0" prefWidth="750.0" AnchorPane.bottomAnchor="269.0" AnchorPane.leftAnchor="213.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="315.0" />
       <TextArea fx:id="motifDeConsutation" layoutX="186.0" layoutY="403.0" prefHeight="63.0" prefWidth="750.0" AnchorPane.bottomAnchor="181.0" AnchorPane.leftAnchor="213.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="403.0" />
@@ -144,7 +144,7 @@
             <Image url="@image/previous-512.png" />
          </image>
       </ImageView>
-      <Label layoutX="779.0" layoutY="133.0" prefHeight="17.0" prefWidth="103.0" text="Statut Vaccinal:" AnchorPane.leftAnchor="779.0">
+      <Label layoutX="770.0" layoutY="133.0" prefHeight="17.0" prefWidth="103.0" text="Statut Vaccinal:" AnchorPane.leftAnchor="770.0">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -162,6 +162,16 @@
          </font>
       </Label>
       <TextField fx:id="villeC" layoutX="825.0" layoutY="160.0" prefHeight="25.0" prefWidth="115.0" promptText="Ville" />
+      <Label layoutX="169.0" layoutY="135.0" prefHeight="17.0" prefWidth="28.0" text="Kg" textFill="#b9b9b9">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="319.0" layoutY="133.0" prefHeight="17.0" prefWidth="28.0" text="Cm" textFill="#b9b9b9" AnchorPane.rightAnchor="650.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
     <stylesheets>
   <URL value="@MyCss.css" />

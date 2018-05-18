@@ -30,7 +30,7 @@ public class Agenda {
         this.contenuJour=aContenuJour; 
         try {
           Class.forName("org.sqlite.JDBC");
-          String url = "jdbc:sqlite:C:\\Users\\info\\pfee\\PFE\\src\\pfe\\DBpfee.db"; // The Url of your database 'Strecture be like: xD' jbdc:sqlite: + the path of your db        
+          String url = "jdbc:sqlite:C:\\Users\\imad_\\Documents\\pfee\\src\\pfe\\DBpfee.db"; // The Url of your database 'Strecture be like: xD' jbdc:sqlite: + the path of your db        
           // Create the Connection ## Pass url (Path) as param
           myConn = DriverManager.getConnection(url); 
         }catch (SQLException e) {

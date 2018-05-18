@@ -35,7 +35,7 @@ import javafx.scene.input.MouseEvent;
  */
 public class consultationController implements Initializable {
 
-      @FXML AnchorPane rootpane;
+    @FXML AnchorPane rootpane;
      
     @FXML
     private void exitButton(ActionEvent event) throws IOException {
@@ -47,7 +47,7 @@ public class consultationController implements Initializable {
        stage.show();
         
     }
-     @FXML
+    @FXML
     void minimize(ActionEvent event){
     
     Stage stage =(Stage)rootpane.getScene().getWindow();
@@ -65,66 +65,65 @@ public class consultationController implements Initializable {
     
     }
     @FXML
-     TextArea Crondu;
+    private TextArea Crondu;
     @FXML
      TextField ng;
     @FXML
-     Label nbrgr;
+    private Label nbrgr;
     
-    @FXML private RadioButton femme;
+    @FXML 
+    private RadioButton femme;
+    
     String name="Celibataire";
     String namea="Selectionnez";
+    
     @FXML 
     void Show(ActionEvent event){
-        if(name.equals(select.getText())||namea.equals(select.getText()) ){
-   ng.setVisible(false);
-    nbrgr.setVisible(false);
-    G.setVisible(false);
-       gp.setVisible(false);
-      slash.setVisible(false);
-      nombreEnfants.setVisible(false);
-        }else{
-        
-        
-        ng.setVisible(true);
-    nbrgr.setVisible(true);
-    G.setVisible(true);
-       gp.setVisible(true);
-      slash.setVisible(true);
-      nombreEnfants.setVisible(true);        
-        }
-    }
-    @FXML
-     void hide(ActionEvent event){
+   if(name.equals(select.getText())||namea.equals(select.getText()) ){
     ng.setVisible(false);
     nbrgr.setVisible(false);
     G.setVisible(false);
-       gp.setVisible(false);
-      slash.setVisible(false);
-      nombreEnfants.setVisible(false);
+    gp.setVisible(false);
+    slash.setVisible(false);
+    nombreEnfants.setVisible(false);
+   }else{
+        
+        
+    ng.setVisible(true);
+    nbrgr.setVisible(true);
+    G.setVisible(true);
+    gp.setVisible(true);
+    slash.setVisible(true);
+    nombreEnfants.setVisible(true);        
+   }
+   }
+  @FXML
+  void hide(ActionEvent event){
+    ng.setVisible(false);
+    nbrgr.setVisible(false);
+    G.setVisible(false);
+    gp.setVisible(false);
+    slash.setVisible(false);
+    nombreEnfants.setVisible(false);
     }
-    @FXML
-    private AnchorPane color;
+  @FXML
+  private AnchorPane color;
      
-     @FXML
-     void blue(ActionEvent event){
-     color.setStyle("-fx-background-color:blue;");
-     
-     }
-     
-     @FXML
-      Label G;
-    @FXML 
-    Label slash;
-    @FXML
-    Label gp;
     
-    @FXML
-    Label enfant;
-    @FXML
-    RadioButton o;
-    @FXML
-    RadioButton non;
+     
+   @FXML
+   Label G;
+   @FXML 
+   Label slash;
+   @FXML
+   Label gp;
+    
+   @FXML
+   Label enfant;
+   @FXML
+   RadioButton o;
+   @FXML
+   RadioButton non;
     
     @FXML
     void showEnfmar(ActionEvent event){
@@ -163,20 +162,21 @@ public class consultationController implements Initializable {
     }
     @FXML
     void hidEnf(ActionEvent event){
-      enfant.setVisible(false);
-      o.setVisible(false);
-      non.setVisible(false);
-      select.setText("Celibataire");
+    enfant.setVisible(false);
+    o.setVisible(false);
+    non.setVisible(false);
+    select.setText("Celibataire");
     
-      if(femme.isSelected()){
+    if(femme.isSelected()){
             
-        ng.setVisible(false);
-        nbrgr.setVisible(false);
-        G.setVisible(false);
-        gp.setVisible(false);
-        slash.setVisible(false);
-        nombreEnfants.setVisible(false); 
-      }
+    ng.setVisible(false);
+    nbrgr.setVisible(false);
+    G.setVisible(false);
+    gp.setVisible(false);
+     slash.setVisible(false);
+      nombreEnfants.setVisible(false); 
+            }
+    
     }
     @FXML
     MenuButton select;
@@ -197,9 +197,10 @@ public class consultationController implements Initializable {
     AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
     rootpane.getChildren().setAll(pane);
     }
-   @FXML
+    
+    @FXML
     TextField nomC;
-   @FXML
+    @FXML
     TextField prenomC;
     @FXML
     TextField ageC;
@@ -207,34 +208,34 @@ public class consultationController implements Initializable {
     TextField poidsC;
     @FXML
     TextField tailleC;
-            @FXML
+    @FXML
     TextField numDeTelC;
-            @FXML
+    @FXML
     RadioButton statutVaccinal0;
-            @FXML
+    @FXML
     RadioButton statutVaccinal1;
-                   @FXML
+    @FXML
     RadioButton male;
-            @FXML
+    @FXML
     TextField villeC;
-            @FXML
+    @FXML
     TextField nombreEnfants;
-            @FXML
+    @FXML
     TextArea antcdsF;
-            @FXML
+    @FXML
     TextArea antcdsP;
-            @FXML
+    @FXML
     TextArea motifDeConsutation;
             
     
-            @FXML
+    @FXML
     DatePicker dateC;
-           
+    
+   
     @FXML 
     void terminer(ActionEvent event) throws IOException, ClassNotFoundException{
-   
-    
-    String statutV1= null;
+       
+        String statutV1= null;
     if (statutVaccinal1.isSelected()){
         statutV1="Oui";
     }else{
@@ -258,12 +259,22 @@ public class consultationController implements Initializable {
     String dates= dateC.getValue().toString();
     
     
-   Consultation myPatient = new Consultation(nomC.getText(),prenomC.getText(),Integer.parseInt(ageC.getText()),Integer.parseInt(poidsC.getText()),Integer.parseInt(tailleC.getText()),Integer.parseInt(numDeTelC.getText()),statutV1,sexe,select.getText(),villeC.getText(),enfants,Integer.parseInt(ng.getText()),Integer.parseInt(nombreEnfants.getText()),antcdsF.getText(),antcdsP.getText(), motifDeConsutation.getText(),Crondu.getText(),dates);
+    
+    if((femme.isSelected()&& name.equals(select.getText()))|| male.isSelected()){
+     ng.setText(null);
+    nombreEnfants.setText(null);
+    }else{
+    
+    }
+   Consultation myPatient = new Consultation(nomC.getText(),prenomC.getText(),Integer.parseInt(ageC.getText()),Integer.parseInt(poidsC.getText()),Integer.parseInt(tailleC.getText()),Integer.parseInt(numDeTelC.getText()),statutV1,sexe,select.getText(),villeC.getText(),enfants,ng.getText(),nombreEnfants.getText(),antcdsF.getText(),antcdsP.getText(), motifDeConsutation.getText(),Crondu.getText(),dates);
   
     myPatient.Ajouter();
     
-     AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
+        
+    AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
     rootpane.getChildren().setAll(pane);
+
+    
     }
   
     
@@ -272,13 +283,13 @@ public class consultationController implements Initializable {
     private double xOffset;
     private double yOffset;
     public void initialize(URL url, ResourceBundle rb) {
-       ng.setVisible(false);
+        ng.setVisible(false);
         nbrgr.setVisible(false);
        G.setVisible(false);
        gp.setVisible(false);
       slash.setVisible(false);
       nombreEnfants.setVisible(false);
-     enfant.setVisible(false);
+       enfant.setVisible(false);
     o.setVisible(false);
     non.setVisible(false);
     
