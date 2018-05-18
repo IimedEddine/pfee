@@ -67,6 +67,10 @@ public class ChangePatientController implements Initializable {
         private TextArea motifConsultation;
         @FXML 
         private TextArea compteRendu;
+        
+        
+        
+     
     
     @FXML 
     void modifier(ActionEvent event){
@@ -126,6 +130,8 @@ public class ChangePatientController implements Initializable {
     
    
     public void initialize(URL url, ResourceBundle rb) {
+        
+       
         
     }    
     

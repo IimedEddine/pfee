@@ -6,11 +6,15 @@
 package pfe;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 /**
@@ -22,14 +26,28 @@ public class AgendaTextArea23Controller implements Initializable {
 
    
    @FXML
-    private void ok(ActionEvent event) {
+   TextArea area23;
+   @FXML
+   
+    private void ok(ActionEvent event) throws ClassNotFoundException {
+        Agenda myAgenda=new Agenda(23,area23.getText());
+        myAgenda.Ajouter(23);
        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
         stage.close();
         
         
     }
+    
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+         try {
+            Agenda myAgenda=new Agenda(23,area23.getText());
+            area23.setText(myAgenda.Afficher(23));
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AgendaTextAreaController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AgendaTextAreaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }    
+    
     
 }

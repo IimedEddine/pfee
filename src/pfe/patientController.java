@@ -25,6 +25,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -46,6 +47,69 @@ public class patientController implements Initializable {
     AnchorPane rootpane;
     @FXML 
     TextField recherche;
+    @FXML
+    RadioButton selecM;
+    @FXML
+    RadioButton selecF;
+    @FXML
+    private void radioSelect(ActionEvent event){
+    if (selecM.isSelected()){
+        try {
+         myTable.getItems().removeAll(myTable.getItems());
+          myConn=Patient.Connection();
+          Statement myStatement = myConn.createStatement();
+          String sql = "SELECT * FROM patient WHERE sexePatient ='M'";
+          ResultSet rs = myStatement.executeQuery(sql);
+
+             while (rs.next()) {  
+               newData.add(new Patient(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(9),rs.getString(11),rs.getString(16)));    
+         }
+           
+            id.setCellValueFactory(new PropertyValueFactory<Patient,Integer>("id"));
+            nom.setCellValueFactory(new PropertyValueFactory<Patient,String>("nom"));
+            prenom.setCellValueFactory(new PropertyValueFactory<Patient,String>("prenom"));
+            age.setCellValueFactory(new PropertyValueFactory<Patient,Integer>("age"));  
+            sexe.setCellValueFactory(new PropertyValueFactory<Patient,String>("sexe"));
+            ville.setCellValueFactory(new PropertyValueFactory<Patient,String>("ville"));
+            situation.setCellValueFactory(new PropertyValueFactory<Patient,String>("situation"));
+           myTable.setItems(newData);
+             
+      } catch (SQLException | ClassNotFoundException ex) {
+          Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
+      }
+        
+    }else {
+        try {
+         myTable.getItems().removeAll(myTable.getItems());
+          myConn=Patient.Connection();
+          Statement myStatement = myConn.createStatement();
+          String sql = "SELECT * FROM patient WHERE sexePatient ='F'";
+          ResultSet rs = myStatement.executeQuery(sql);
+
+             while (rs.next()) {  
+               newData.add(new Patient(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(9),rs.getString(11),rs.getString(16)));    
+         }
+           
+            id.setCellValueFactory(new PropertyValueFactory<Patient,Integer>("id"));
+            nom.setCellValueFactory(new PropertyValueFactory<Patient,String>("nom"));
+            prenom.setCellValueFactory(new PropertyValueFactory<Patient,String>("prenom"));
+            age.setCellValueFactory(new PropertyValueFactory<Patient,Integer>("age"));  
+            sexe.setCellValueFactory(new PropertyValueFactory<Patient,String>("sexe"));
+            ville.setCellValueFactory(new PropertyValueFactory<Patient,String>("ville"));
+            situation.setCellValueFactory(new PropertyValueFactory<Patient,String>("situation"));
+           myTable.setItems(newData);
+             
+      } catch (SQLException | ClassNotFoundException ex) {
+          Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
+      }
+        
+    }
+
+
+
+
+   }
+    
     
     @FXML
     private void exitButton(ActionEvent event) throws IOException {
@@ -88,6 +152,21 @@ public class patientController implements Initializable {
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
+       myTable.setEditable(true);
+       int selectedIndex = myTable.getSelectionModel().getSelectedIndex();
+       Patient selectedItem = myTable.getSelectionModel().getSelectedItem();
+       if (selectedIndex >= 0) {
+           int idToModify=selectedItem.getId();
+           System.out.println("on l'id");
+       }else {
+           
+           Alert alert = new Alert(Alert.AlertType.WARNING);
+           alert.setTitle("Pas De Selection");
+           alert.setHeaderText("Aucune Case sélectionnée");
+           alert.setContentText("veuillez sélectionner un employé dans la table.");
+           alert.showAndWait();
+       }
+       
     
     }
     
@@ -223,4 +302,5 @@ public class patientController implements Initializable {
           Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
       }
     }    
+    
 }
