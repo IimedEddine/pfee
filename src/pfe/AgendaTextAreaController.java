@@ -5,8 +5,12 @@
  */
 package pfe;
 
+import static com.sun.corba.se.impl.orbutil.CorbaResourceUtil.getText;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,8 +24,12 @@ import javafx.stage.Stage;
  * @author imad_
  */
 public class AgendaTextAreaController implements Initializable {
-   @FXML 
+   
+    
+    
+    @FXML 
    TextArea area1;
+   
    
    
    @FXML
@@ -37,9 +45,24 @@ public class AgendaTextAreaController implements Initializable {
         
         
     }
-    @Override
+   
+   @FXML
+   
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        try {
+            Agenda myAgenda=new Agenda(1,area1.getText());
+            area1.setText(myAgenda.Afficher(1));
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AgendaTextAreaController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AgendaTextAreaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+     
+        
+      
+       
+      
     }    
     
 }

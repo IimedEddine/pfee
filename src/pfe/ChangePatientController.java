@@ -21,6 +21,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
+import static pfe.Patient.myConn;
 
 /**
  * FXML Controller class
@@ -76,9 +77,14 @@ public class ChangePatientController implements Initializable {
         private TextArea motifConsultation;
         @FXML 
         private TextArea compteRendu;
+
         Connection myConn=null;
         int id=Patient.idTable;
-    
+
+        
+        
+        
+
     @FXML 
     void modifier(ActionEvent event){
     
@@ -183,6 +189,7 @@ public class ChangePatientController implements Initializable {
    
     public void initialize(URL url, ResourceBundle rb) {
         
+
         try {
           myConn=Patient.Connection();
           Statement myStatement = myConn.createStatement();
@@ -222,6 +229,11 @@ public class ChangePatientController implements Initializable {
          } catch (ClassNotFoundException ex) {
              Logger.getLogger(ChangePatientController.class.getName()).log(Level.SEVERE, null, ex);
          }    
+
+       
+        
+    }    
+
     
 }
-}
+

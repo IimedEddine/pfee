@@ -6,7 +6,10 @@
 package pfe;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -34,8 +37,16 @@ public class AgendaTextArea2Controller implements Initializable {
         
         
     }
+    
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+         try {
+            Agenda myAgenda=new Agenda(2,area2.getText());
+            area2.setText(myAgenda.Afficher(2));
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AgendaTextAreaController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AgendaTextAreaController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }    
     
 }
