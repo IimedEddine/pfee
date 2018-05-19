@@ -9,11 +9,15 @@
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <jar href="PFE.jar" size="1435867" download="eager" />
     <jar href="lib\itextpdf-5.4.0.jar" size="1889485" download="eager" />
 =======
     <jar href="PFE.jar" size="1434406" download="eager" />
 >>>>>>> 67380ceac52f4724fd4c6dfad719828ee13a5071
+=======
+    <jar href="PFE.jar" size="1435511" download="eager" />
+>>>>>>> 7c24aea086224595f20295ad45ecd718b89237d8
     <jar href="lib\sqlite-jdbc-3.7.2.jar" size="3201128" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="PFE" >

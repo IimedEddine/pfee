@@ -11,6 +11,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -42,6 +45,7 @@ import javafx.scene.input.MouseEvent;
  * @author imad_
  */
 public class patientController implements Initializable {
+   
 
     @FXML 
     AnchorPane rootpane;
@@ -53,9 +57,32 @@ public class patientController implements Initializable {
     RadioButton selecF;
     @FXML
     private void radioSelect(ActionEvent event){
+   if(selecM.isSelected()&& selecF.isSelected()){  newData.clear(); try {
+          myConn=Patient.Connection();
+          Statement myStatement = myConn.createStatement();
+          String sql = "SELECT * FROM `patient` ";
+          ResultSet rs = myStatement.executeQuery(sql);
+
+             while (rs.next()) {  
+               newData.add(new Patient(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(9),rs.getString(11),rs.getString(16)));    
+         }
+           
+            id.setCellValueFactory(new PropertyValueFactory<Patient,Integer>("id"));
+            nom.setCellValueFactory(new PropertyValueFactory<Patient,String>("nom"));
+            prenom.setCellValueFactory(new PropertyValueFactory<Patient,String>("prenom"));
+            age.setCellValueFactory(new PropertyValueFactory<Patient,Integer>("age"));  
+            sexe.setCellValueFactory(new PropertyValueFactory<Patient,String>("sexe"));
+            ville.setCellValueFactory(new PropertyValueFactory<Patient,String>("ville"));
+            situation.setCellValueFactory(new PropertyValueFactory<Patient,String>("situation"));
+            myTable.setItems(newData);
+            
+             
+      } catch (SQLException | ClassNotFoundException ex) {
+          Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
+      }}else  
     if (selecM.isSelected()){
         try {
-         myTable.getItems().removeAll(myTable.getItems());
+          myTable.getItems().removeAll(myTable.getItems());
           myConn=Patient.Connection();
           Statement myStatement = myConn.createStatement();
           String sql = "SELECT * FROM patient WHERE sexePatient ='M'";
@@ -72,15 +99,15 @@ public class patientController implements Initializable {
             sexe.setCellValueFactory(new PropertyValueFactory<Patient,String>("sexe"));
             ville.setCellValueFactory(new PropertyValueFactory<Patient,String>("ville"));
             situation.setCellValueFactory(new PropertyValueFactory<Patient,String>("situation"));
-           myTable.setItems(newData);
+            myTable.setItems(newData);
              
       } catch (SQLException | ClassNotFoundException ex) {
           Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
       }
         
-    }else {
+    }else if(selecF.isSelected()){
         try {
-         myTable.getItems().removeAll(myTable.getItems());
+          myTable.getItems().removeAll(myTable.getItems());
           myConn=Patient.Connection();
           Statement myStatement = myConn.createStatement();
           String sql = "SELECT * FROM patient WHERE sexePatient ='F'";
@@ -97,12 +124,39 @@ public class patientController implements Initializable {
             sexe.setCellValueFactory(new PropertyValueFactory<Patient,String>("sexe"));
             ville.setCellValueFactory(new PropertyValueFactory<Patient,String>("ville"));
             situation.setCellValueFactory(new PropertyValueFactory<Patient,String>("situation"));
-           myTable.setItems(newData);
+            myTable.setItems(newData);
              
       } catch (SQLException | ClassNotFoundException ex) {
           Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
       }
         
+    }else{
+    
+    newData.clear(); try {
+          myConn=Patient.Connection();
+          Statement myStatement = myConn.createStatement();
+          String sql = "SELECT * FROM `patient` ";
+          ResultSet rs = myStatement.executeQuery(sql);
+
+             while (rs.next()) {  
+               newData.add(new Patient(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(9),rs.getString(11),rs.getString(16)));    
+         }
+           
+            id.setCellValueFactory(new PropertyValueFactory<Patient,Integer>("id"));
+            nom.setCellValueFactory(new PropertyValueFactory<Patient,String>("nom"));
+            prenom.setCellValueFactory(new PropertyValueFactory<Patient,String>("prenom"));
+            age.setCellValueFactory(new PropertyValueFactory<Patient,Integer>("age"));  
+            sexe.setCellValueFactory(new PropertyValueFactory<Patient,String>("sexe"));
+            ville.setCellValueFactory(new PropertyValueFactory<Patient,String>("ville"));
+            situation.setCellValueFactory(new PropertyValueFactory<Patient,String>("situation"));
+            myTable.setItems(newData);
+            
+             
+      } catch (SQLException | ClassNotFoundException ex) {
+          Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
+      }
+    
+    
     }
 
 
@@ -110,10 +164,38 @@ public class patientController implements Initializable {
 
    }
     
+    @FXML
+    void refresh(ActionEvent event){
+    
+    newData.clear();
+    try {
+          myConn=Patient.Connection();
+          Statement myStatement = myConn.createStatement();
+          String sql = "SELECT * FROM `patient` ";
+          ResultSet rs = myStatement.executeQuery(sql);
+
+             while (rs.next()) {  
+               newData.add(new Patient(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(9),rs.getString(11),rs.getString(16)));    
+         }
+           
+            id.setCellValueFactory(new PropertyValueFactory<Patient,Integer>("id"));
+            nom.setCellValueFactory(new PropertyValueFactory<Patient,String>("nom"));
+            prenom.setCellValueFactory(new PropertyValueFactory<Patient,String>("prenom"));
+            age.setCellValueFactory(new PropertyValueFactory<Patient,Integer>("age"));  
+            sexe.setCellValueFactory(new PropertyValueFactory<Patient,String>("sexe"));
+            ville.setCellValueFactory(new PropertyValueFactory<Patient,String>("ville"));
+            situation.setCellValueFactory(new PropertyValueFactory<Patient,String>("situation"));
+            myTable.setItems(newData);
+            
+             
+      } catch (SQLException | ClassNotFoundException ex) {
+          Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
+      }
+    }
     
     @FXML
     private void exitButton(ActionEvent event) throws IOException {
-    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Quit.fxml"));
+       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Quit.fxml"));
        Parent root1 = (Parent) fxmlLoader.load();
        Stage stage = new Stage();
        stage.setScene(new Scene(root1)); 
@@ -123,9 +205,9 @@ public class patientController implements Initializable {
      @FXML
     void minimize(ActionEvent event){
     
-    Stage stage =(Stage)rootpane.getScene().getWindow();
-    stage=(Stage)((Button)event.getSource()).getScene().getWindow();
-    stage.setIconified(true);
+      Stage stage =(Stage)rootpane.getScene().getWindow();
+      stage=(Stage)((Button)event.getSource()).getScene().getWindow();
+      stage.setIconified(true);
     
     
     
@@ -133,21 +215,21 @@ public class patientController implements Initializable {
   
      @FXML
     private void consultation(ActionEvent event) throws IOException{
-     AnchorPane pane= FXMLLoader.load(getClass().getResource("consultation.fxml"));
+      AnchorPane pane= FXMLLoader.load(getClass().getResource("consultation.fxml"));
       rootpane.getChildren().setAll(pane);
     
     }
     @FXML
     void back(MouseEvent MOUSE_CLICKED) throws IOException{
     
-    AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
-    rootpane.getChildren().setAll(pane);
+      AnchorPane pane= FXMLLoader.load(getClass().getResource("homePage.fxml"));
+      rootpane.getChildren().setAll(pane);
     }
     
     @FXML 
     void test(ActionEvent event) throws IOException, SQLException{
        try{
-           myTable.setEditable(true);
+         myTable.setEditable(true);
          int selectedIndex = myTable.getSelectionModel().getSelectedIndex();
          Patient selectedItem = myTable.getSelectionModel().getSelectedItem();
          if (selectedIndex >= 0) {
@@ -157,34 +239,23 @@ public class patientController implements Initializable {
          while(rs.next()){
          
          Patient.idTable=rs.getInt("id_patient");
-          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("changePatient.fxml"));
-       Parent root1 = (Parent) fxmlLoader.load();
-       Stage stage = new Stage();
-       stage.setScene(new Scene(root1)); 
-       stage.initStyle(StageStyle.UNDECORATED);
-       stage.show();
-       myTable.setEditable(true);
+         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("changePatient.fxml"));
+         Parent root1 = (Parent) fxmlLoader.load();
+         Stage stage = new Stage();
+         stage.setScene(new Scene(root1)); 
+         stage.initStyle(StageStyle.UNDECORATED);
+         stage.show();
+         myTable.setEditable(true);
       
-       if (selectedIndex >= 0) {
-           int idToModify=selectedItem.getId();
-           System.out.println("on l'id");
-       }else {
-           
-           Alert alert = new Alert(Alert.AlertType.WARNING);
-           alert.setTitle("Pas De Selection");
-           alert.setHeaderText("Aucune Case sélectionnée");
-           alert.setContentText("veuillez sélectionner un employé dans la table.");
-           alert.showAndWait();
-       }
-       
+     
     
          }}else {
         
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Pas De Selection");
-        alert.setHeaderText("Aucune Case sélectionnée");
-        alert.setContentText("veuillez sélectionner un patient dans la table.");
-        alert.showAndWait();
+         Alert alert = new Alert(Alert.AlertType.WARNING);
+         alert.setTitle("Pas De Selection");
+         alert.setHeaderText("Aucune Case sélectionnée");
+         alert.setContentText("veuillez sélectionner un patient dans la table.");
+         alert.showAndWait();
       }} catch (SQLException ex) {
           Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
       }
@@ -225,50 +296,50 @@ public class patientController implements Initializable {
          int selectedIndex = myTable.getSelectionModel().getSelectedIndex();
          Patient selectedItem = myTable.getSelectionModel().getSelectedItem();
        if (selectedIndex >= 0) {  
-            myConn=Patient.Connection();
-        myTable.getItems().remove(selectedIndex);
-        String sql = "DELETE FROM `patient` WHERE `id_patient` = "+selectedItem.getId()+"";
-        myConn=Patient.Connection();
-        Statement myStatement = myConn.createStatement();       
-        myStatement.executeUpdate(sql);
+         myConn=Patient.Connection();
+         myTable.getItems().remove(selectedIndex);
+         String sql = "DELETE FROM `patient` WHERE `id_patient` = "+selectedItem.getId()+"";
+         myConn=Patient.Connection();
+         Statement myStatement = myConn.createStatement();       
+         myStatement.executeUpdate(sql);
        }else {
         
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Pas De Selection");
-        alert.setHeaderText("Aucune Case sélectionnée");
-        alert.setContentText("veuillez sélectionner un patient dans la table.");
-        alert.showAndWait();
+         Alert alert = new Alert(Alert.AlertType.WARNING);
+         alert.setTitle("Pas De Selection");
+         alert.setHeaderText("Aucune Case sélectionnée");
+         alert.setContentText("veuillez sélectionner un patient dans la table.");
+         alert.showAndWait();
       }
 
       }catch (SQLException ex) {
-            Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
       } catch (ClassNotFoundException ex) {
-            Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
       }
   
     }
    @FXML 
    void recherche(KeyEvent key){
-      String word=recherche.getText();
+        String word=recherche.getText();
     try {
-         myTable.getItems().removeAll(myTable.getItems());
-          myConn=Patient.Connection();
-          Statement myStatement = myConn.createStatement();
-          String sql = "SELECT * FROM patient WHERE nomPatient LIKE '"+word+"%' "
-                  + "OR prenomPatient LIKE '"+word+"%' order by nomPatient ";
-          ResultSet rs = myStatement.executeQuery(sql);
+        myTable.getItems().removeAll(myTable.getItems());
+        myConn=Patient.Connection();
+        Statement myStatement = myConn.createStatement();
+        String sql = "SELECT * FROM patient WHERE nomPatient LIKE '"+word+"%' "
+                     + "OR prenomPatient LIKE '"+word+"%' order by nomPatient ";
+        ResultSet rs = myStatement.executeQuery(sql);
 
-             while (rs.next()) {  
-               newData.add(new Patient(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(9),rs.getString(11),rs.getString(16)));    
+         while (rs.next()) {  
+           newData.add(new Patient(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getInt(4),rs.getString(9),rs.getString(11),rs.getString(16)));    
          }
            
-            id.setCellValueFactory(new PropertyValueFactory<Patient,Integer>("id"));
-            nom.setCellValueFactory(new PropertyValueFactory<Patient,String>("nom"));
-            prenom.setCellValueFactory(new PropertyValueFactory<Patient,String>("prenom"));
-            age.setCellValueFactory(new PropertyValueFactory<Patient,Integer>("age"));  
-            sexe.setCellValueFactory(new PropertyValueFactory<Patient,String>("sexe"));
-            ville.setCellValueFactory(new PropertyValueFactory<Patient,String>("ville"));
-            situation.setCellValueFactory(new PropertyValueFactory<Patient,String>("situation"));
+           id.setCellValueFactory(new PropertyValueFactory<Patient,Integer>("id"));
+           nom.setCellValueFactory(new PropertyValueFactory<Patient,String>("nom"));
+           prenom.setCellValueFactory(new PropertyValueFactory<Patient,String>("prenom"));
+           age.setCellValueFactory(new PropertyValueFactory<Patient,Integer>("age"));  
+           sexe.setCellValueFactory(new PropertyValueFactory<Patient,String>("sexe"));
+           ville.setCellValueFactory(new PropertyValueFactory<Patient,String>("ville"));
+           situation.setCellValueFactory(new PropertyValueFactory<Patient,String>("situation"));
            myTable.setItems(newData);
              
       } catch (SQLException | ClassNotFoundException ex) {
@@ -304,7 +375,7 @@ public class patientController implements Initializable {
        try {
           myConn=Patient.Connection();
           Statement myStatement = myConn.createStatement();
-          String sql = "SELECT * FROM `patient` WHERE 1";
+          String sql = "SELECT * FROM `patient` ";
           ResultSet rs = myStatement.executeQuery(sql);
 
              while (rs.next()) {  
@@ -319,10 +390,13 @@ public class patientController implements Initializable {
             ville.setCellValueFactory(new PropertyValueFactory<Patient,String>("ville"));
             situation.setCellValueFactory(new PropertyValueFactory<Patient,String>("situation"));
             myTable.setItems(newData);
+            
              
       } catch (SQLException | ClassNotFoundException ex) {
           Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
       }
+     
+       
     }    
     
 }

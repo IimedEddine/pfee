@@ -38,48 +38,50 @@ public class ChangePatientController implements Initializable {
         
         
     }
-    @FXML 
+       @FXML 
     public TextField nom;
-      @FXML 
+       @FXML 
     private TextField prenom;
-        @FXML 
+       @FXML 
     private TextField age;
-        @FXML 
+       @FXML 
     private TextField poids;
-      @FXML 
+       @FXML 
     private TextField taille;
-        @FXML 
+       @FXML 
     private TextField numdetel;
         
        @FXML 
     private TextField grossesse;
        @FXML
     private TextField nombreEnfants;
-      @FXML 
+       @FXML 
     private TextField sexe;
-        @FXML 
+       @FXML 
     private TextField situationFamilliale;
-        @FXML 
+       @FXML 
     private TextField nombreGrossesse;
-      @FXML 
+       @FXML 
     private TextField enfants;
-        @FXML 
+       @FXML 
     private TextField dateConsultation;
-         @FXML 
+       @FXML 
     private TextField statutVaccinal;
-        @FXML 
+       @FXML 
     private TextField ville;
-        @FXML 
+       @FXML 
         private TextArea Afamilliaux;
-        @FXML 
+       @FXML 
         private TextArea Apersonnels;
-        @FXML 
+       @FXML 
         private TextArea motifConsultation;
-        @FXML 
+       @FXML 
         private TextArea compteRendu;
-
-        Connection myConn=null;
-        int id=Patient.idTable;
+       @FXML
+        Button modifier;
+       
+       Connection myConn=null;
+       int id=Patient.idTable;
 
         
         
@@ -109,6 +111,22 @@ public class ChangePatientController implements Initializable {
    motifConsultation.setEditable(true);
    compteRendu.setEditable(true);
    nombreEnfants.setEditable(true);
+   
+   nom.setStyle("-fx-background-color:#f1f2f6;");
+   prenom.setStyle("-fx-background-color:#f1f2f6;");
+   age.setStyle("-fx-background-color:#f1f2f6;");
+   poids.setStyle("-fx-background-color:#f1f2f6;");
+   taille.setStyle("-fx-background-color:#f1f2f6;");
+   numdetel.setStyle("-fx-background-color:#f1f2f6;");
+   grossesse.setStyle("-fx-background-color:#f1f2f6;");
+   sexe.setStyle("-fx-background-color:#f1f2f6;");
+   situationFamilliale.setStyle("-fx-background-color:#f1f2f6;");
+   nombreGrossesse.setStyle("-fx-background-color:#f1f2f6;");
+   enfants.setStyle("-fx-background-color:#f1f2f6;");
+   dateConsultation.setStyle("-fx-background-color:#f1f2f6;");
+   statutVaccinal.setStyle("-fx-background-color:#f1f2f6;");
+   ville.setStyle("-fx-background-color:#f1f2f6;");
+   nombreEnfants.setStyle("-fx-background-color:#f1f2f6;");
    
    
    }
@@ -182,8 +200,12 @@ public class ChangePatientController implements Initializable {
              Logger.getLogger(ChangePatientController.class.getName()).log(Level.SEVERE, null, ex);
          }    
     */
-    Consultation myConsultation= new Consultation(nom.getText(),prenom.getText(),Integer.parseInt(age.getText()),Integer.parseInt(poids.getText()),Integer.parseInt(taille.getText()),Integer.parseInt(numdetel.getText()),statutVaccinal.getText(), sexe.getText(),situationFamilliale.getText(),ville.getText(),enfants.getText(),nombreGrossesse.getText(),nombreEnfants.getText(),Afamilliaux.getText(),Apersonnels.getText(),  motifConsultation.getText(),compteRendu.getText(),dateConsultation.getText());
-    myConsultation.Modifier(Patient.idTable);
+       
+           Consultation myConsultation= new Consultation(nom.getText(),prenom.getText(),Integer.parseInt(age.getText()),Integer.parseInt(poids.getText()),Integer.parseInt(taille.getText()),Integer.parseInt(numdetel.getText()),statutVaccinal.getText(), sexe.getText(),situationFamilliale.getText(),ville.getText(),enfants.getText(),nombreGrossesse.getText(),nombreEnfants.getText(),Afamilliaux.getText(),Apersonnels.getText(),  motifConsultation.getText(),compteRendu.getText(),dateConsultation.getText());
+           myConsultation.Modifier(Patient.idTable);
+           Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+           stage.close();
+       
     }
     
    
@@ -212,9 +234,9 @@ public class ChangePatientController implements Initializable {
           grossesse.setText(rs.getString(13));
           nombreEnfants.setText(rs.getString(14));
           Afamilliaux.setText(rs.getString(15));
-         Apersonnels.setText(rs.getString(16));
-         motifConsultation.setText(rs.getString(17));
-         compteRendu.setText(rs.getString(18));
+          Apersonnels.setText(rs.getString(16));
+          motifConsultation.setText(rs.getString(17)); 
+          compteRendu.setText(rs.getString(18)+"\n" +"La date de cette consultation "+rs.getString(19)+"\n"+"========================");
           dateConsultation.setText(rs.getString(19));
          
           

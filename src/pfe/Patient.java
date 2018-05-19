@@ -27,9 +27,9 @@ public class Patient {
     String sexe;
     String ville;
     String situation;
-    static int idTable;
+    static int idTable; 
 
-    //private Connection myConn;
+ 
 
     public Patient(int id,String pNom, String pPrenom, int pAge, String pSexe, String pVille, String pSituation ) throws ClassNotFoundException{
         

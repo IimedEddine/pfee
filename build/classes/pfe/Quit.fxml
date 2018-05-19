@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="rootpane" prefHeight="185.0" prefWidth="464.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pfe.QuitController">
+<AnchorPane id="AnchorPane" fx:id="rootpane" prefHeight="185.0" prefWidth="464.0" style="-fx-border-color: brown;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pfe.QuitController">
    <children>
-      <AnchorPane prefHeight="25.0" prefWidth="464.0" style="-fx-background-color: brown;" AnchorPane.bottomAnchor="149.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="25.0" prefWidth="464.0" style="-fx-background-color: brown;" AnchorPane.bottomAnchor="149.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Button layoutX="440.0" layoutY="1.0" mnemonicParsing="false" onAction="#No" text="X" AnchorPane.rightAnchor="3.0">
                <font>
@@ -20,6 +20,9 @@
                </font>
             </Label>
          </children>
+         <stylesheets>
+  <URL value="@MyCss.css" />
+</stylesheets>
       </AnchorPane>
       <Button layoutX="116.0" layoutY="130.0" mnemonicParsing="false" onAction="#Yes" prefHeight="25.0" prefWidth="75.0" text="Oui">
          <font>
@@ -35,6 +38,6 @@
          </font></Label>
    </children>
    <stylesheets>
-  <URL value="@MyCss.css" />
+  <URL value="@HomeCss.css" />
 </stylesheets>
 </AnchorPane>

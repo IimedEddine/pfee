@@ -15,8 +15,10 @@
     
     -fx-background-color: black;
     -fx-text-fill: white;
-    -fx-padding: 7px;
+    
     -fx-border-color: brown;
+    -fx-effect:  dropshadow( one-pass-box , white , 8 ,
+     0.0 , 5 , 3 );
    
     
        
@@ -24,24 +26,6 @@
     
     
     
-}
-.radio-button .radio{
--fx-border-width     : 1px   ;
--fx-border-color     : #000  ;
--fx-background-color : white ;
--fx-border-radius    : 15px  ;
--fx-height           : 15px  ; /* Not working */
-height               : 5px   ; /* Not working */
-}
-.radio-button .radio:hover{
--fx-border-width     : 1px   ;
--fx-border-color     : brown  ;
--fx-background-color : white ;
--fx-border-radius    : 15px  ;
--fx-height           : 15px  ; /* Not working */
-height               : 5px   ; /* Not working */
-
-
 }
 
 
@@ -60,7 +44,7 @@ height               : 5px   ; /* Not working */
     
 }
 .menu-button{
-     -fx-font-veight: bold;
+    -fx-font-veight: bold;
     -fx-background-color: white;
     -fx-text-fill: black;
     -fx-border-color: #4b4b4b;
@@ -71,14 +55,11 @@ height               : 5px   ; /* Not working */
     
     
 }
-.menu-item{
-    
-    -fx-font-veight: bold;
-    -fx-background-color: white;
+.menu-button:hover{
     
     
-    -fx-background-radius: 22;
-    -fx-border-width: 1.5;
     
-    
+    -fx-effect:  dropshadow( one-pass-box , white , 10 ,
+     0.0 , 3 , 2 );
 }
+

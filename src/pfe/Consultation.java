@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
+import javafx.scene.control.TableView;
 
 /**
  *
@@ -168,6 +169,7 @@ public class Consultation {
                
             
                 statement.executeUpdate();
+                
             
           }catch (SQLException e){
             System.out.println(e.getMessage());
