@@ -27,6 +27,7 @@ public class Patient {
     String sexe;
     String ville;
     String situation;
+    static int idTable;
 
     //private Connection myConn;
 

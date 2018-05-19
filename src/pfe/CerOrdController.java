@@ -70,6 +70,13 @@ public class CerOrdController implements Initializable {
     }
     
     @FXML 
+    private void Imprimer (ActionEvent event){
+        
+    
+    
+    }
+    
+    @FXML 
     private AnchorPane color;
     private double xOffset;
     private double yOffset;
@@ -92,5 +99,6 @@ public class CerOrdController implements Initializable {
  color.setCursor(Cursor.DEFAULT);
  });
     }    
+    
     
 }

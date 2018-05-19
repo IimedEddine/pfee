@@ -145,16 +145,26 @@ public class patientController implements Initializable {
     }
     
     @FXML 
-    void test(ActionEvent event) throws IOException{
-       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("changePatient.fxml"));
+    void test(ActionEvent event) throws IOException, SQLException{
+       try{
+           myTable.setEditable(true);
+         int selectedIndex = myTable.getSelectionModel().getSelectedIndex();
+         Patient selectedItem = myTable.getSelectionModel().getSelectedItem();
+         if (selectedIndex >= 0) {
+         Statement myStatement = myConn.createStatement();
+         String sql = "SELECT * FROM `patient` WHERE `id_patient` = "+selectedItem.getId()+"";
+         ResultSet rs = myStatement.executeQuery(sql);
+         while(rs.next()){
+         
+         Patient.idTable=rs.getInt("id_patient");
+          FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("changePatient.fxml"));
        Parent root1 = (Parent) fxmlLoader.load();
        Stage stage = new Stage();
        stage.setScene(new Scene(root1)); 
        stage.initStyle(StageStyle.UNDECORATED);
        stage.show();
        myTable.setEditable(true);
-       int selectedIndex = myTable.getSelectionModel().getSelectedIndex();
-       Patient selectedItem = myTable.getSelectionModel().getSelectedItem();
+      
        if (selectedIndex >= 0) {
            int idToModify=selectedItem.getId();
            System.out.println("on l'id");
@@ -168,6 +178,18 @@ public class patientController implements Initializable {
        }
        
     
+         }}else {
+        
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Pas De Selection");
+        alert.setHeaderText("Aucune Case sélectionnée");
+        alert.setContentText("veuillez sélectionner un patient dans la table.");
+        alert.showAndWait();
+      }} catch (SQLException ex) {
+          Logger.getLogger(patientController.class.getName()).log(Level.SEVERE, null, ex);
+      }
+        
+      
     }
     
    @FXML 
@@ -202,8 +224,8 @@ public class patientController implements Initializable {
          myTable.setEditable(true);
          int selectedIndex = myTable.getSelectionModel().getSelectedIndex();
          Patient selectedItem = myTable.getSelectionModel().getSelectedItem();
-       if (selectedIndex >= 0) {
-        // if(selectedItem.getId()!=3){
+       if (selectedIndex >= 0) {  
+            myConn=Patient.Connection();
         myTable.getItems().remove(selectedIndex);
         String sql = "DELETE FROM `patient` WHERE `id_patient` = "+selectedItem.getId()+"";
         myConn=Patient.Connection();
@@ -214,7 +236,7 @@ public class patientController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Pas De Selection");
         alert.setHeaderText("Aucune Case sélectionnée");
-        alert.setContentText("veuillez sélectionner un employé dans la table.");
+        alert.setContentText("veuillez sélectionner un patient dans la table.");
         alert.showAndWait();
       }
 

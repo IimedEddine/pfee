@@ -19,6 +19,7 @@ import javafx.stage.StageStyle;
  */
 public class PFE extends Application {
     private static Stage stageObj;
+    
     @Override
     public void start(Stage stage) throws Exception {
         stageObj = stage;
