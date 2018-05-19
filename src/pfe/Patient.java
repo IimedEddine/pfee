@@ -181,7 +181,7 @@ public class Patient {
   
      try {
         Class.forName("org.sqlite.JDBC");
-        String url = "jdbc:sqlite:C:\\Users\\info\\pfee\\src\\pfe\\DBpfee.db"; // The Url of your database 'Strecture be like: xD' jbdc:sqlite: + the path of your db
+        String url = "jdbc:sqlite:C:\\Users\\imad_\\Documents\\pfee\\src\\pfe\\DBpfee.db"; // The Url of your database 'Strecture be like: xD' jbdc:sqlite: + the path of your db
          myConn = DriverManager.getConnection(url); 
          System.out.println("Connected");
         }catch (SQLException e) {
